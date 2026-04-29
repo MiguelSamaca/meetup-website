@@ -2479,6 +2479,311 @@ p {
 }
 
 /* ============================================================
+   ALIADOS Y PLATAFORMAS
+   ============================================================ */
+.partners {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+}
+
+/* Plataformas certificadas */
+.partners__platforms {
+  padding: var(--space-xl) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.partners__platforms-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.partners__platforms-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.partners__platforms-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.partners__platform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.partners__platform-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: all var(--transition);
+  min-width: 180px;
+  justify-content: center;
+}
+
+.partners__platform-logo:hover {
+  border-color: rgba(14,207,130,0.3);
+  box-shadow: 0 0 20px rgba(14,207,130,0.1);
+}
+
+/* Colores por plataforma */
+.partners__platform-logo--teams  { color: #6264A7; border-color: rgba(98,100,167,0.3); }
+.partners__platform-logo--teams:hover  { border-color: rgba(98,100,167,0.6); box-shadow: 0 0 20px rgba(98,100,167,0.15); }
+.partners__platform-logo--zoom   { color: #2D8CFF; border-color: rgba(45,140,255,0.3); }
+.partners__platform-logo--zoom:hover   { border-color: rgba(45,140,255,0.6); box-shadow: 0 0 20px rgba(45,140,255,0.15); }
+.partners__platform-logo--meet   { color: #34A853; border-color: rgba(52,168,83,0.3); }
+.partners__platform-logo--meet:hover   { border-color: rgba(52,168,83,0.6); box-shadow: 0 0 20px rgba(52,168,83,0.15); }
+.partners__platform-logo--byod   { color: var(--accent); border-color: rgba(14,207,130,0.3); }
+
+.partners__platform-cert {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-align: center;
+}
+
+.partners__platform-divider {
+  width: 1px;
+  height: 48px;
+  background: var(--border);
+}
+
+/* Marquee de fabricantes */
+.partners__marquee-wrap {
+  padding: var(--space-lg) 0;
+  overflow: hidden;
+}
+
+.partners__marquee-label {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.partners__marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+}
+
+.partners__marquee-track {
+  display: flex;
+  gap: var(--space-xl);
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.partners__marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.partners__brand {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+  transition: color var(--transition);
+  padding: 8px 0;
+}
+
+.partners__brand:hover {
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .partners__platforms-row { gap: var(--space-md); }
+  .partners__platform-divider { display: none; }
+  .partners__platform-logo { min-width: 140px; font-size: 14px; padding: 12px 16px; }
+}
+
+/* ============================================================
+   RECURSOS EDUCATIVOS
+   ============================================================ */
+.resources {
+  background: var(--bg-base);
+  border-top: 1px solid var(--border);
+}
+
+.resources__header { margin-bottom: var(--space-xl); }
+
+.resources__title {
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.resources__subtitle {
+  color: var(--text-secondary);
+  font-size: 16px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.resources__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: var(--space-md);
+  align-items: stretch;
+}
+
+/* Card principal */
+.resources__card--main {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform var(--transition);
+}
+
+.resources__card--main:hover { transform: translateY(-4px); }
+
+.resources__card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+
+.resources__card--main:hover .resources__card-bg { transform: scale(1.04); }
+
+.resources__card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7,9,15,0.1) 0%, rgba(7,9,15,0.97) 100%);
+}
+
+/* Cards secundarias */
+.resources__secondary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.resources__card--secondary {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  flex: 1;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.resources__card--secondary:hover {
+  border-color: rgba(14,207,130,0.3);
+  transform: translateY(-3px);
+}
+
+/* Contenido */
+.resources__card-content {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+}
+
+/* Tipo badge */
+.resources__card-type {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  padding: 4px 12px;
+  width: fit-content;
+}
+
+.resources__card-type--guide {
+  background: rgba(14,207,130,0.12);
+  border: 1px solid rgba(14,207,130,0.3);
+  color: var(--accent);
+}
+
+.resources__card-type--article {
+  background: rgba(45,140,255,0.12);
+  border: 1px solid rgba(45,140,255,0.3);
+  color: #2D8CFF;
+}
+
+.resources__card-type--report {
+  background: rgba(139,92,246,0.12);
+  border: 1px solid rgba(139,92,246,0.3);
+  color: #8B5CF6;
+}
+
+.resources__card-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+.resources__card--main .resources__card-title {
+  font-size: clamp(20px, 2.5vw, 26px);
+}
+
+.resources__card-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.resources__card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: auto;
+  transition: gap var(--transition);
+}
+
+.resources__card-link:hover { gap: 10px; }
+
+@media (max-width: 768px) {
+  .resources__grid { grid-template-columns: 1fr; }
+  .resources__card--main { min-height: 340px; }
+}
+
+/* ============================================================
    RESPONSIVE BREAKPOINTS GLOBALES
    ============================================================ */
 @media (max-width: 1024px) {
