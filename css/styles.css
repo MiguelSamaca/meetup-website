@@ -549,61 +549,62 @@ p {
 
 /* Mobile nav */
 @media (max-width: 968px) {
-  /* Navbar sube sobre el menú */
   .navbar {
-    z-index: 300;
+    position: sticky;
+    overflow: visible;
   }
 
   .navbar__menu {
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
-    bottom: 0;
-    /* padding-top empuja el contenido debajo del navbar (top-bar ~32px + navbar ~68px) */
-    padding-top: 112px;
-    padding-bottom: 40px;
-    background: #07090F;
+    background: #0D1117;
+    border-top: 2px solid var(--accent);
+    border-bottom: 1px solid var(--border);
     flex-direction: column;
+    align-items: stretch;
     justify-content: flex-start;
-    align-items: center;
-    transform: translateY(-100%);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 250;
-    overflow-y: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    /* Sin transform, sin fixed, sin z-index battle */
   }
 
   .navbar__menu.open {
-    transform: translateY(0);
+    max-height: 480px;
   }
 
   .navbar__links {
     flex-direction: column;
     gap: 0;
     width: 100%;
-    padding: 0 var(--space-md);
+    padding: 8px 0;
   }
 
   .navbar__link {
-    font-size: 20px;
-    font-weight: 700;
-    padding: 18px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px 24px;
     width: 100%;
-    text-align: center;
-    color: var(--text-primary);
-    border-bottom: 1px solid var(--border);
+    text-align: left;
+    color: var(--text-secondary);
     border-radius: 0;
+    border-bottom: 1px solid var(--border);
     background: transparent;
+    display: block;
   }
 
-  .navbar__link:first-child {
-    border-top: 1px solid var(--border);
+  .navbar__link:last-child {
+    border-bottom: none;
   }
 
   .navbar__link:hover,
   .navbar__link.active {
     color: var(--accent);
-    background: transparent;
+    background: rgba(14, 207, 130, 0.05);
+    padding-left: 32px;
+    transition: all 0.2s ease;
   }
 
   .navbar__link.active::after {
@@ -612,8 +613,6 @@ p {
 
   .navbar__hamburger {
     display: flex;
-    position: relative;
-    z-index: 301;
   }
 }
 
