@@ -2987,7 +2987,7 @@ p {
 }
 
 .footer__logo-name {
-  font-family: var(--font-head);
+  font-family: var(--font-heading);
   font-size: 26px;
   font-weight: 800;
   color: var(--text-primary);
@@ -3006,7 +3006,7 @@ p {
 }
 
 .footer__tagline {
-  font-family: var(--font-head);
+  font-family: var(--font-heading);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -3152,4 +3152,38 @@ p {
   .grid-4 { grid-template-columns: 1fr; }
   h1 { font-size: 32px; }
   h2 { font-size: 26px; }
+}
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+[data-reveal].reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   REDUCED MOTION — accesibilidad
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
