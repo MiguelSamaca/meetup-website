@@ -1206,6 +1206,7 @@ p {
 
 .solutions__nav {
   display: flex;
+  justify-content: center;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -1260,6 +1261,11 @@ p {
   display: flex;
   align-items: center;
   overflow: hidden;
+}
+
+/* Fuerza ocultar los paneles con [hidden], ya que display:flex lo sobreescribe */
+.solutions__panel[hidden] {
+  display: none !important;
 }
 
 /* Colores de fondo por panel */
