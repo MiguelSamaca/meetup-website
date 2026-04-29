@@ -1966,6 +1966,250 @@ p {
 }
 
 /* ============================================================
+   INDUSTRIAS
+   ============================================================ */
+.industries {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+}
+
+.industries__header {
+  margin-bottom: var(--space-xl);
+}
+
+.industries__title {
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.industries__subtitle {
+  color: var(--text-secondary);
+  font-size: 16px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.industries__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+}
+
+.industries__card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 380px;
+  cursor: default;
+  transition: transform var(--transition);
+}
+
+.industries__card:hover {
+  transform: translateY(-6px);
+}
+
+.industries__card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+
+.industries__card:hover .industries__card-bg {
+  transform: scale(1.06);
+}
+
+.industries__card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(7,9,15,0.3) 0%,
+    rgba(7,9,15,0.85) 70%,
+    rgba(7,9,15,0.97) 100%
+  );
+  transition: background var(--transition);
+}
+
+.industries__card:hover .industries__card-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(7,9,15,0.2) 0%,
+    rgba(7,9,15,0.75) 60%,
+    rgba(7,9,15,0.97) 100%
+  );
+}
+
+.industries__card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.industries__card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: rgba(14, 207, 130, 0.15);
+  border: 1px solid rgba(14, 207, 130, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.industries__card-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
+.industries__card-case {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.55;
+}
+
+.industries__card-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding-top: 4px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.industries__card-stat strong {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--accent);
+  font-family: var(--font-heading);
+}
+
+.industries__card-stat span {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .industries__grid { grid-template-columns: repeat(2, 1fr); }
+  .industries__card { min-height: 320px; }
+}
+
+@media (max-width: 600px) {
+  .industries__grid { grid-template-columns: 1fr; }
+  .industries__card { min-height: 260px; }
+}
+
+/* ============================================================
+   BENEFICIOS
+   ============================================================ */
+.benefits {
+  background: var(--bg-base);
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--border);
+}
+
+.benefits__header {
+  margin-bottom: var(--space-xl);
+}
+
+.benefits__title {
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-top: 8px;
+}
+
+.benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+}
+
+.benefits__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  transition: background var(--transition);
+}
+
+.benefits__item:hover {
+  background: rgba(14, 207, 130, 0.03);
+}
+
+.benefits__icon {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  transition: all var(--transition);
+}
+
+.benefits__item:hover .benefits__icon {
+  background: var(--accent-light);
+  border-color: rgba(14, 207, 130, 0.3);
+  box-shadow: 0 0 20px rgba(14, 207, 130, 0.15);
+}
+
+.benefits__text {
+  flex: 1;
+}
+
+.benefits__item-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.benefits__item-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* Divisores horizontales entre filas */
+.benefits__divider {
+  grid-column: 1 / -1;
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+.benefits__cta {
+  padding-top: var(--space-sm);
+}
+
+@media (max-width: 768px) {
+  .benefits__grid {
+    grid-template-columns: 1fr;
+  }
+  .benefits__divider {
+    grid-column: 1;
+  }
+}
+
+/* ============================================================
    RESPONSIVE BREAKPOINTS GLOBALES
    ============================================================ */
 @media (max-width: 1024px) {
