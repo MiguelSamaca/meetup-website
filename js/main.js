@@ -129,6 +129,58 @@
 })();
 
 /* ──────────────────────────────────────────
+   ROOM CONFIGURATOR
+   ────────────────────────────────────────── */
+(function initRoomConfig() {
+  const items    = document.querySelectorAll('.room-config__item');
+  const images   = document.querySelectorAll('.room-config__img');
+  const specPanels = document.querySelectorAll('.room-config__specs');
+  const badgeName  = document.querySelector('.room-config__badge-name');
+  const badgeCap   = document.querySelector('.room-config__badge-cap');
+
+  if (!items.length) return;
+
+  const roomData = {
+    huddle:    { name: 'Huddle / Pequeña',        cap: '2 – 6 personas' },
+    mediana:   { name: 'Sala Mediana',             cap: '6 – 12 personas' },
+    grande:    { name: 'Grande / Sala de Juntas',  cap: '12 – 20+ personas' },
+    auditorio: { name: 'Auditorio / Alto Impacto', cap: 'Masivo · Eventos híbridos' },
+  };
+
+  function selectRoom(room) {
+    // Menú
+    items.forEach(item => {
+      const isActive = item.dataset.room === room;
+      item.classList.toggle('room-config__item--active', isActive);
+      item.setAttribute('aria-pressed', isActive);
+    });
+
+    // Imágenes
+    images.forEach(img => {
+      const isActive = img.id === `room-img-${room}`;
+      img.classList.toggle('room-config__img--active', isActive);
+    });
+
+    // Specs
+    specPanels.forEach(panel => {
+      const isActive = panel.dataset.room === room;
+      panel.classList.toggle('room-config__specs--active', isActive);
+      isActive ? panel.removeAttribute('hidden') : panel.setAttribute('hidden', '');
+    });
+
+    // Badge
+    if (badgeName && roomData[room]) {
+      badgeName.textContent = roomData[room].name;
+      badgeCap.textContent  = roomData[room].cap;
+    }
+  }
+
+  items.forEach(item => {
+    item.addEventListener('click', () => selectRoom(item.dataset.room));
+  });
+})();
+
+/* ──────────────────────────────────────────
    SOLUCIONES — TABS
    ────────────────────────────────────────── */
 (function initSolutionsTabs() {

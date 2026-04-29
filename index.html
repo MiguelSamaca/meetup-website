@@ -471,10 +471,163 @@
     <!-- ══════════════════════════════════════════
          SECCIÓN 6 — TAMAÑO DE SALA (Configurador)
          ══════════════════════════════════════════ -->
-    <section class="room-configurator section" id="configurador" aria-label="Soluciones por tamaño de sala">
-      <!-- Panel izquierdo: Huddle | Mediana | Grande | Auditorio -->
-      <!-- Panel central: imagen de sala según selección -->
-      <!-- Panel derecho: specs y equipamiento -->
+    <section class="room-config" id="configurador" aria-label="Soluciones por tamaño de sala">
+
+      <div class="container room-config__header">
+        <span class="section-label">Soluciones por tamaño</span>
+        <h2 class="room-config__title">Encuentra la sala ideal para tu equipo</h2>
+        <p class="room-config__subtitle">Selecciona el tipo de espacio y descubre la solución recomendada.</p>
+      </div>
+
+      <div class="room-config__body">
+
+        <!-- ── Panel izquierdo: menú de tipos de sala ── -->
+        <nav class="room-config__menu" aria-label="Tipos de sala">
+
+          <button class="room-config__item room-config__item--active" data-room="huddle"
+            aria-pressed="true" aria-controls="room-img-huddle room-specs-huddle">
+            <div class="room-config__item-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+            </div>
+            <div class="room-config__item-info">
+              <span class="room-config__item-name">Huddle / Pequeña</span>
+              <span class="room-config__item-cap">2 – 6 personas</span>
+            </div>
+            <svg class="room-config__item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+
+          <button class="room-config__item" data-room="mediana"
+            aria-pressed="false" aria-controls="room-img-mediana room-specs-mediana">
+            <div class="room-config__item-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 4v16M16 4v16"/></svg>
+            </div>
+            <div class="room-config__item-info">
+              <span class="room-config__item-name">Sala Mediana</span>
+              <span class="room-config__item-cap">6 – 12 personas</span>
+            </div>
+            <svg class="room-config__item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+
+          <button class="room-config__item" data-room="grande"
+            aria-pressed="false" aria-controls="room-img-grande room-specs-grande">
+            <div class="room-config__item-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M5 4v16M12 4v16M19 4v16"/></svg>
+            </div>
+            <div class="room-config__item-info">
+              <span class="room-config__item-name">Grande / Sala de Juntas</span>
+              <span class="room-config__item-cap">12 – 20+ personas</span>
+            </div>
+            <svg class="room-config__item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+
+          <button class="room-config__item" data-room="auditorio"
+            aria-pressed="false" aria-controls="room-img-auditorio room-specs-auditorio">
+            <div class="room-config__item-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20h20M4 20V10l8-7 8 7v10"/><path d="M9 20v-5h6v5"/></svg>
+            </div>
+            <div class="room-config__item-info">
+              <span class="room-config__item-name">Auditorio / Alto Impacto</span>
+              <span class="room-config__item-cap">Masivo · Eventos híbridos</span>
+            </div>
+            <svg class="room-config__item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+
+        </nav>
+
+        <!-- ── Panel central: imagen ── -->
+        <div class="room-config__visual" aria-live="polite" aria-atomic="true">
+
+          <div class="room-config__img-wrap">
+            <img id="room-img-huddle"    class="room-config__img room-config__img--active"
+              src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80"
+              alt="Sala Huddle pequeña para 2 a 6 personas" loading="lazy">
+            <img id="room-img-mediana"   class="room-config__img"
+              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80"
+              alt="Sala mediana para 6 a 12 personas" loading="lazy">
+            <img id="room-img-grande"    class="room-config__img"
+              src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=900&q=80"
+              alt="Sala grande o sala de juntas para 12 a 20 personas" loading="lazy">
+            <img id="room-img-auditorio" class="room-config__img"
+              src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80"
+              alt="Auditorio y espacios de alto impacto" loading="lazy">
+          </div>
+
+          <div class="room-config__visual-badge" id="roomBadge">
+            <span class="room-config__badge-name">Huddle / Pequeña</span>
+            <span class="room-config__badge-cap">2 – 6 personas</span>
+          </div>
+
+        </div>
+
+        <!-- ── Panel derecho: especificaciones ── -->
+        <div class="room-config__specs-wrap">
+
+          <!-- Specs Huddle -->
+          <div id="room-specs-huddle" class="room-config__specs room-config__specs--active" data-room="huddle">
+            <h3 class="room-config__specs-title">Equipamiento recomendado</h3>
+            <ul class="room-config__specs-list">
+              <li>Barra todo-en-uno con cámara y micrófono integrados</li>
+              <li>Pantalla 55"– 65" 4K</li>
+              <li>Auto-encuadre inteligente</li>
+              <li>Panel táctil de reserva</li>
+              <li>Conectividad USB-C / HDMI / inalámbrica</li>
+            </ul>
+            <div class="room-config__platforms">
+              <span>Teams ✓</span><span>Zoom ✓</span><span>Meet ✓</span>
+            </div>
+            <a href="#Contacto" class="btn btn--primary room-config__cta">Cotizar esta sala →</a>
+          </div>
+
+          <!-- Specs Mediana -->
+          <div id="room-specs-mediana" class="room-config__specs" data-room="mediana" hidden>
+            <h3 class="room-config__specs-title">Equipamiento recomendado</h3>
+            <ul class="room-config__specs-list">
+              <li>Cámara PTZ 4K con auto-tracking</li>
+              <li>Pantallas duales 65"– 75"</li>
+              <li>Micrófonos de mesa o techo con beamforming</li>
+              <li>DSP y control centralizado</li>
+              <li>Panel de reserva con calendario integrado</li>
+            </ul>
+            <div class="room-config__platforms">
+              <span>Teams ✓</span><span>Zoom ✓</span><span>Meet ✓</span>
+            </div>
+            <a href="#Contacto" class="btn btn--primary room-config__cta">Cotizar esta sala →</a>
+          </div>
+
+          <!-- Specs Grande -->
+          <div id="room-specs-grande" class="room-config__specs" data-room="grande" hidden>
+            <h3 class="room-config__specs-title">Equipamiento recomendado</h3>
+            <ul class="room-config__specs-list">
+              <li>Cámaras múltiples PTZ + fija</li>
+              <li>Matriz AV profesional</li>
+              <li>Refuerzo sonoro con DSP avanzado</li>
+              <li>Podio y pantallas duales / proyector</li>
+              <li>Streaming en vivo opcional</li>
+            </ul>
+            <div class="room-config__platforms">
+              <span>Teams ✓</span><span>Zoom ✓</span><span>Meet ✓</span>
+            </div>
+            <a href="#Contacto" class="btn btn--primary room-config__cta">Cotizar esta sala →</a>
+          </div>
+
+          <!-- Specs Auditorio -->
+          <div id="room-specs-auditorio" class="room-config__specs" data-room="auditorio" hidden>
+            <h3 class="room-config__specs-title">Equipamiento recomendado</h3>
+            <ul class="room-config__specs-list">
+              <li>Cámaras PTZ de largo alcance</li>
+              <li>Captura multicámara con switcher</li>
+              <li>Audio de potencia con distribución zonal</li>
+              <li>Sistema de streaming e integración híbrida</li>
+              <li>Videowall y señalización digital</li>
+            </ul>
+            <div class="room-config__platforms">
+              <span>Teams ✓</span><span>Zoom ✓</span><span>Meet ✓</span>
+            </div>
+            <a href="#Contacto" class="btn btn--primary room-config__cta">Cotizar esta sala →</a>
+          </div>
+
+        </div>
+      </div>
     </section>
 
     <!-- ══════════════════════════════════════════

@@ -1439,6 +1439,306 @@ p {
 }
 
 /* ============================================================
+   ROOM CONFIGURATOR
+   ============================================================ */
+.room-config {
+  background: var(--bg-card);
+  padding: var(--space-xl) 0 0;
+  border-top: 1px solid var(--border);
+}
+
+.room-config__header {
+  text-align: center;
+  padding-bottom: var(--space-lg);
+}
+
+.room-config__title {
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.room-config__subtitle {
+  color: var(--text-secondary);
+  font-size: 16px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* 3 paneles */
+.room-config__body {
+  display: grid;
+  grid-template-columns: 260px 1fr 280px;
+  min-height: 500px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Panel izquierdo ── */
+.room-config__menu {
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.room-config__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background var(--transition), border-left-color var(--transition);
+  border-left: 3px solid transparent;
+  background: transparent;
+  color: var(--text-secondary);
+  width: 100%;
+}
+
+.room-config__item:hover {
+  background: rgba(14, 207, 130, 0.04);
+  color: var(--text-primary);
+}
+
+.room-config__item--active {
+  background: rgba(14, 207, 130, 0.07);
+  border-left-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.room-config__item-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+}
+
+.room-config__item--active .room-config__item-icon,
+.room-config__item:hover   .room-config__item-icon {
+  background: var(--accent-light);
+  border-color: rgba(14, 207, 130, 0.3);
+  color: var(--accent);
+}
+
+.room-config__item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.room-config__item-name {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.room-config__item-cap {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.room-config__item--active .room-config__item-cap {
+  color: var(--accent);
+}
+
+.room-config__item-arrow {
+  opacity: 0;
+  color: var(--accent);
+  transition: opacity var(--transition), transform var(--transition);
+  flex-shrink: 0;
+}
+
+.room-config__item--active .room-config__item-arrow,
+.room-config__item:hover   .room-config__item-arrow {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+/* ── Panel central: imagen ── */
+.room-config__visual {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-base);
+}
+
+.room-config__img-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.room-config__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.room-config__img--active {
+  opacity: 1;
+}
+
+.room-config__visual-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  z-index: 2;
+  background: rgba(7, 9, 15, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.room-config__badge-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.room-config__badge-cap {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ── Panel derecho: specs ── */
+.room-config__specs-wrap {
+  border-left: 1px solid var(--border);
+  position: relative;
+}
+
+.room-config__specs {
+  padding: var(--space-lg) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  height: 100%;
+}
+
+.room-config__specs[hidden] {
+  display: none !important;
+}
+
+.room-config__specs-title {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.room-config__specs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.room-config__specs-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.room-config__specs-list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.room-config__platforms {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.room-config__platforms span {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-light);
+  border: 1px solid rgba(14, 207, 130, 0.25);
+  color: var(--accent);
+}
+
+.room-config__cta {
+  width: 100%;
+  justify-content: center;
+  font-size: 14px;
+  padding: 13px 20px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .room-config__body {
+    grid-template-columns: 220px 1fr 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .room-config__body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 280px auto;
+  }
+
+  .room-config__menu {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    flex-direction: row;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .room-config__menu::-webkit-scrollbar { display: none; }
+
+  .room-config__item {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px 20px;
+    border-bottom: none;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    min-width: 120px;
+    gap: 6px;
+  }
+
+  .room-config__item--active {
+    border-bottom-color: var(--accent);
+    border-left-color: transparent;
+  }
+
+  .room-config__item-arrow { display: none; }
+
+  .room-config__specs-wrap {
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+}
+
+/* ============================================================
    RESPONSIVE BREAKPOINTS GLOBALES
    ============================================================ */
 @media (max-width: 1024px) {
