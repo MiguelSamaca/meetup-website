@@ -17,12 +17,12 @@
   --bg-light:       #F4F7FF;
   --bg-white:       #FFFFFF;
 
-  /* --- Color de acento principal (azul MeetUp) --- */
-  --accent:         #1E6FFF;
-  --accent-hover:   #1558D6;
-  --accent-light:   rgba(30, 111, 255, 0.12);
+  /* --- Color de acento principal (verde MeetUp) --- */
+  --accent:         #0ECF82;
+  --accent-hover:   #0BB36F;
+  --accent-light:   rgba(14, 207, 130, 0.12);
 
-  /* --- CTA / Acción (verde) --- */
+  /* --- CTA / Acción (verde, mismo tono) --- */
   --cta:            #0ECF82;
   --cta-hover:      #0BB36F;
   --cta-light:      rgba(14, 207, 130, 0.12);
@@ -32,24 +32,24 @@
   --text-secondary: #8896B3;
   --text-muted:     #4A5775;
   --text-dark:      #0D1117;
-  --text-link:      #1E6FFF;
+  --text-link:      #0ECF82;
 
   /* --- Bordes --- */
   --border:         #1E2840;
   --border-light:   #E8EDF7;
 
   /* --- Gradientes --- */
-  --grad-hero:      linear-gradient(135deg, #07090F 0%, #0D1A35 100%);
-  --grad-accent:    linear-gradient(135deg, #1E6FFF 0%, #0EA5E9 100%);
-  --grad-cta:       linear-gradient(135deg, #0ECF82 0%, #0EA5E9 100%);
+  --grad-hero:      linear-gradient(135deg, #07090F 0%, #071A12 100%);
+  --grad-accent:    linear-gradient(135deg, #0ECF82 0%, #06D6A0 100%);
+  --grad-cta:       linear-gradient(135deg, #0ECF82 0%, #06B6D4 100%);
   --grad-warm:      linear-gradient(135deg, #FF6B35 0%, #F7C59F 100%);
-  --grad-devices:   linear-gradient(135deg, #0D1A35 0%, #1A0D35 100%);
+  --grad-devices:   linear-gradient(135deg, #071A12 0%, #0D1A35 100%);
 
   /* --- Sombras --- */
   --shadow-sm:      0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md:      0 8px 32px rgba(0, 0, 0, 0.4);
   --shadow-lg:      0 24px 64px rgba(0, 0, 0, 0.5);
-  --shadow-glow:    0 0 40px rgba(30, 111, 255, 0.2);
+  --shadow-glow:    0 0 40px rgba(14, 207, 130, 0.2);
 
   /* --- Bordes redondeados --- */
   --radius-sm:      8px;
@@ -217,23 +217,25 @@ p {
 }
 
 .btn--primary {
-  background: var(--cta);
+  background: var(--accent);
   color: #000;
+  font-weight: 700;
 }
 .btn--primary:hover {
-  background: var(--cta-hover);
+  background: var(--accent-hover);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(14, 207, 130, 0.35);
 }
 
 .btn--accent {
   background: var(--accent);
-  color: #fff;
+  color: #000;
+  font-weight: 700;
 }
 .btn--accent:hover {
   background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(30, 111, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(14, 207, 130, 0.35);
 }
 
 .btn--outline {
@@ -259,7 +261,7 @@ p {
 
 .btn--store {
   background: var(--accent);
-  color: #fff;
+  color: #000;
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 0.05em;
@@ -268,6 +270,8 @@ p {
 }
 .btn--store:hover {
   background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(14, 207, 130, 0.35);
 }
 
 /* ============================================================
@@ -421,7 +425,7 @@ p {
 .navbar__logo-icon {
   width: 36px;
   height: 36px;
-  background: var(--grad-accent);
+  background: var(--accent);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
