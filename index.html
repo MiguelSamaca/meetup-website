@@ -201,16 +201,90 @@
          SECCIÓN 3 — QUOTE DESTACADA
          ══════════════════════════════════════════ -->
     <section class="quote-section" aria-label="Cita destacada">
-      <!-- "Creamos soluciones para generar experiencias grupales de alta productividad" -->
-      <!-- Efecto watermark tipográfico decorativo -->
+      <div class="quote-section__watermark" aria-hidden="true">MEETUP</div>
+      <div class="container quote-section__inner">
+        <svg class="quote-section__icon" width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M14 20C14 14.477 18.477 10 24 10h2v4h-2c-3.314 0-6 2.686-6 6v2h8v16H14V20zm16 0C30 14.477 34.477 10 40 10h2v4h-2c-3.314 0-6 2.686-6 6v2h8v16H30V20z" fill="currentColor" opacity="0.2"/>
+        </svg>
+        <blockquote class="quote-section__text">
+          Creamos soluciones para generar
+          <em class="quote-section__highlight"> experiencias grupales de alta productividad</em>
+        </blockquote>
+        <div class="quote-section__bar" aria-hidden="true"></div>
+      </div>
     </section>
 
     <!-- ══════════════════════════════════════════
          SECCIÓN 4 — PROPUESTA DE VALOR
          ══════════════════════════════════════════ -->
-    <section class="value-prop section" aria-label="Propuesta de valor">
-      <!-- Imagen de fondo + overlay -->
-      <!-- H2 | Párrafo | 3 métricas: Consultoría, Ingeniería AV, Soporte continuo -->
+    <section class="value-prop" aria-label="Propuesta de valor">
+
+      <!-- Fondo imagen -->
+      <div class="value-prop__bg" aria-hidden="true"
+        style="background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1920&q=80')">
+      </div>
+      <div class="value-prop__overlay" aria-hidden="true"></div>
+
+      <div class="container value-prop__content">
+
+        <!-- Texto izquierda -->
+        <div class="value-prop__text">
+          <span class="section-label">Nuestra filosofía</span>
+          <h2 class="value-prop__title">
+            Creamos salas inteligentes con experiencias de colaboración,
+            <span class="value-prop__title-accent">no solo instalamos equipos</span>
+          </h2>
+          <p class="value-prop__desc">
+            Diseñamos salas para reuniones inteligentes, intuitivas, escalables y confiables.
+            Nuestro enfoque combina <strong>consultoría</strong>, <strong>ingeniería audiovisual</strong>,
+            <strong>automatización del espacio</strong> y soporte continuo para una experiencia
+            uniforme en toda tu organización.
+          </p>
+          <a href="#Contacto" class="btn btn--primary">
+            Agenda una asesoría gratuita
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <!-- 3 métricas derecha -->
+        <div class="value-prop__metrics" aria-label="Pilares de nuestra propuesta">
+
+          <div class="value-prop__metric">
+            <div class="value-prop__metric-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/></svg>
+            </div>
+            <div>
+              <h3 class="value-prop__metric-title">Consultoría integral</h3>
+              <p class="value-prop__metric-desc">Análisis del espacio, casos de uso y diseño técnico antes de instalar cualquier equipo.</p>
+            </div>
+          </div>
+
+          <hr class="value-prop__divider" aria-hidden="true" />
+
+          <div class="value-prop__metric">
+            <div class="value-prop__metric-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div>
+              <h3 class="value-prop__metric-title">Ingeniería audiovisual</h3>
+              <p class="value-prop__metric-desc">Cableado, cámaras, micrófonos, DSP y pantallas calibrados para audio y video de alta calidad.</p>
+            </div>
+          </div>
+
+          <hr class="value-prop__divider" aria-hidden="true" />
+
+          <div class="value-prop__metric">
+            <div class="value-prop__metric-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h3 class="value-prop__metric-title">Soporte continuo</h3>
+              <p class="value-prop__metric-desc">Monitoreo, mantenimiento preventivo y mesa de ayuda para máxima disponibilidad de tus salas.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </section>
 
     <!-- ══════════════════════════════════════════
