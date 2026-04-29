@@ -19,15 +19,70 @@
   <!-- ══════════════════════════════════════════
        SECCIÓN 0 — TOP BAR
        ══════════════════════════════════════════ -->
-  <div class="top-bar" role="banner" aria-label="Barra de utilidades">
-    <!-- Links utilitarios: Recursos, Soporte, Contacto, teléfono -->
+  <div class="top-bar" role="complementary" aria-label="Barra de utilidades">
+    <div class="container top-bar__inner">
+      <span class="top-bar__promo">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Agenda tu asesoría gratuita — Sin costo ni compromiso
+      </span>
+      <ul class="top-bar__links" role="list">
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#Contacto">Soporte</a></li>
+        <li><a href="#Contacto">Contáctenos</a></li>
+        <li class="top-bar__divider" aria-hidden="true"></li>
+        <li>
+          <a href="tel:+573000000000" class="top-bar__phone">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.02 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            +57 300 000 0000
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 
   <!-- ══════════════════════════════════════════
        SECCIÓN 1 — NAVBAR
        ══════════════════════════════════════════ -->
-  <header class="navbar" role="navigation" aria-label="Menú principal">
-    <!-- Logo | Menú (Soluciones, Casos de Uso, Beneficios, Proceso, Recursos, Contacto) | CTA TIENDA -->
+  <header class="navbar" id="navbar" role="navigation" aria-label="Menú principal">
+    <div class="container navbar__inner">
+
+      <!-- Logo -->
+      <a href="/" class="navbar__logo" aria-label="MeetUp — Ir al inicio">
+        <div class="navbar__logo-icon" aria-hidden="true">M</div>
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-name">MeetUp</span>
+          <span class="navbar__logo-sub">salas inteligentes</span>
+        </div>
+      </a>
+
+      <!-- Menú desktop -->
+      <nav class="navbar__menu" id="navMenu" aria-label="Navegación principal">
+        <ul class="navbar__links" role="list">
+          <li><a href="#soluciones" class="navbar__link">Soluciones</a></li>
+          <li><a href="#casos"      class="navbar__link">Casos de Uso</a></li>
+          <li><a href="#beneficios" class="navbar__link">Beneficios</a></li>
+          <li><a href="#proceso"    class="navbar__link">Proceso</a></li>
+          <li><a href="#recursos"   class="navbar__link">Recursos</a></li>
+          <li><a href="#Contacto"   class="navbar__link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Acciones -->
+      <div class="navbar__actions">
+        <a href="https://tienda.meetupco.com/" target="_blank" rel="noopener" class="btn btn--store" aria-label="Ir a la tienda MeetUp">
+          Tienda
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+
+        <!-- Hamburguesa mobile -->
+        <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+
+    </div>
   </header>
 
   <main id="main">
