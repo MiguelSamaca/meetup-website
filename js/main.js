@@ -127,3 +127,41 @@
   };
   window.addEventListener('scroll', activateLink, { passive: true });
 })();
+
+/* ──────────────────────────────────────────
+   SOLUCIONES — TABS
+   ────────────────────────────────────────── */
+(function initSolutionsTabs() {
+  const tabs   = document.querySelectorAll('.solutions__tab');
+  const panels = document.querySelectorAll('.solutions__panel');
+
+  if (!tabs.length) return;
+
+  function activateTab(index) {
+    tabs.forEach((tab, i) => {
+      const isActive = i === index;
+      tab.classList.toggle('solutions__tab--active', isActive);
+      tab.setAttribute('aria-selected', isActive);
+    });
+
+    panels.forEach((panel, i) => {
+      const isActive = i === index;
+      panel.classList.toggle('solutions__panel--active', isActive);
+      if (isActive) {
+        panel.removeAttribute('hidden');
+      } else {
+        panel.setAttribute('hidden', '');
+      }
+    });
+  }
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => activateTab(i));
+
+    // Navegación por teclado (←→)
+    tab.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') { activateTab((i + 1) % tabs.length); tabs[(i + 1) % tabs.length].focus(); }
+      if (e.key === 'ArrowLeft')  { activateTab((i - 1 + tabs.length) % tabs.length); tabs[(i - 1 + tabs.length) % tabs.length].focus(); }
+    });
+  });
+})();

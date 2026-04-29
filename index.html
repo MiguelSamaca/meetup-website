@@ -290,11 +290,182 @@
     <!-- ══════════════════════════════════════════
          SECCIÓN 5 — SOLUCIONES (4 Tabs)
          ══════════════════════════════════════════ -->
-    <section class="solutions section" id="soluciones" aria-label="Soluciones">
-      <!-- Tab 1: Diseño e Implementación (fondo azul oscuro) -->
-      <!-- Tab 2: Integración Plataformas  (fondo teal oscuro) -->
-      <!-- Tab 3: Automatización           (fondo violeta oscuro) -->
-      <!-- Tab 4: Experiencia Completa     (fondo negro) -->
+    <section class="solutions" id="soluciones" aria-label="Soluciones MeetUp">
+
+      <!-- Encabezado de sección -->
+      <div class="solutions__header">
+        <div class="container">
+          <span class="section-label">Nuestras soluciones</span>
+          <h2 class="solutions__heading">Todo lo que necesitas para una sala perfecta</h2>
+          <p class="solutions__subheading">Desde el diseño hasta el soporte continuo, cubrimos cada etapa.</p>
+        </div>
+      </div>
+
+      <!-- Barra de tabs -->
+      <div class="solutions__nav-wrapper" id="solutionsNav">
+        <div class="container">
+          <div class="solutions__nav" role="tablist" aria-label="Soluciones MeetUp">
+
+            <button class="solutions__tab solutions__tab--active" role="tab"
+              aria-selected="true" aria-controls="sol-panel-0" data-tab="0">
+              <span class="solutions__tab-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+              </span>
+              <span>Diseño e Implementación</span>
+            </button>
+
+            <button class="solutions__tab" role="tab"
+              aria-selected="false" aria-controls="sol-panel-1" data-tab="1">
+              <span class="solutions__tab-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </span>
+              <span>Integración de Plataformas</span>
+            </button>
+
+            <button class="solutions__tab" role="tab"
+              aria-selected="false" aria-controls="sol-panel-2" data-tab="2">
+              <span class="solutions__tab-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/></svg>
+              </span>
+              <span>Automatización</span>
+            </button>
+
+            <button class="solutions__tab" role="tab"
+              aria-selected="false" aria-controls="sol-panel-3" data-tab="3">
+              <span class="solutions__tab-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </span>
+              <span>Experiencia Completa</span>
+            </button>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Paneles -->
+      <div class="solutions__panels">
+
+        <!-- Panel 1: Diseño e Implementación -->
+        <div class="solutions__panel solutions__panel--active" id="sol-panel-0"
+          role="tabpanel" aria-labelledby="sol-tab-0" data-color="blue">
+          <div class="solutions__panel-bg" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80')" aria-hidden="true"></div>
+          <div class="solutions__panel-overlay" aria-hidden="true"></div>
+          <div class="container solutions__panel-inner">
+            <div class="solutions__panel-text">
+              <span class="solutions__panel-label">01 / Diseño e Implementación</span>
+              <h2 class="solutions__panel-title">Implementación de salas<br>Todo en Uno</h2>
+              <p class="solutions__panel-desc">
+                Creamos salas de videoconferencia completas, desde la consultoría inicial hasta la puesta a punto final. Garantizando reuniones claras y fluidas.
+              </p>
+              <ul class="solutions__list" aria-label="Qué incluye">
+                <li>Análisis del espacio y casos de uso</li>
+                <li>Planos, equipos, cableado e iluminación</li>
+                <li>Calibración acústica y pruebas reales</li>
+              </ul>
+              <div class="solutions__panel-benefits">
+                <span class="solutions__benefit">Reuniones sin fricciones</span>
+                <span class="solutions__benefit">Estándares replicables</span>
+                <span class="solutions__benefit">Escalabilidad</span>
+              </div>
+              <a href="#Contacto" class="btn btn--primary">Cotiza esta solución →</a>
+            </div>
+            <div class="solutions__panel-visual" aria-hidden="true">
+              <div class="solutions__panel-num">01</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Integración de Plataformas -->
+        <div class="solutions__panel" id="sol-panel-1"
+          role="tabpanel" aria-labelledby="sol-tab-1" data-color="teal" hidden>
+          <div class="solutions__panel-bg" style="background-image: url('https://images.unsplash.com/photo-1587614382346-4ec70e388b28?auto=format&fit=crop&w=1920&q=80')" aria-hidden="true"></div>
+          <div class="solutions__panel-overlay" aria-hidden="true"></div>
+          <div class="container solutions__panel-inner">
+            <div class="solutions__panel-text">
+              <span class="solutions__panel-label">02 / Integración de Plataformas</span>
+              <h2 class="solutions__panel-title">Teams, Zoom y Google Meet<br>en un solo toque</h2>
+              <p class="solutions__panel-desc">
+                Integramos tus salas con las principales plataformas colaborativas para reuniones rápidas y sin complicaciones, con modalidades BYOD y BYOM.
+              </p>
+              <ul class="solutions__list" aria-label="Qué incluye">
+                <li>Salas certificadas Teams Rooms y Zoom Rooms</li>
+                <li>Compatibilidad con Google Meet</li>
+                <li>Paneles de reserva y calendarios integrados</li>
+              </ul>
+              <div class="solutions__panel-benefits">
+                <span class="solutions__benefit">Inicio en un toque</span>
+                <span class="solutions__benefit">Menos soporte TI</span>
+                <span class="solutions__benefit">Experiencia uniforme</span>
+              </div>
+              <a href="#Contacto" class="btn btn--primary">Cotiza esta solución →</a>
+            </div>
+            <div class="solutions__panel-visual" aria-hidden="true">
+              <div class="solutions__panel-num">02</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3: Automatización -->
+        <div class="solutions__panel" id="sol-panel-2"
+          role="tabpanel" aria-labelledby="sol-tab-2" data-color="purple" hidden>
+          <div class="solutions__panel-bg" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1920&q=80')" aria-hidden="true"></div>
+          <div class="solutions__panel-overlay" aria-hidden="true"></div>
+          <div class="container solutions__panel-inner">
+            <div class="solutions__panel-text">
+              <span class="solutions__panel-label">03 / Automatización</span>
+              <h2 class="solutions__panel-title">La sala que se gestiona<br>sola, automáticamente</h2>
+              <p class="solutions__panel-desc">
+                Transformamos tus salas en espacios inteligentes que se ajustan automáticamente. Se enciende al detectar presencia, ajusta luz y clima, y genera reportes al finalizar.
+              </p>
+              <ul class="solutions__list" aria-label="Qué incluye">
+                <li>Paneles táctiles y sensores de presencia</li>
+                <li>Control de luz, clima y cortinas</li>
+                <li>Reserva de salas con analítica de uso</li>
+              </ul>
+              <div class="solutions__panel-benefits">
+                <span class="solutions__benefit">Confort automático</span>
+                <span class="solutions__benefit">Ahorro energético</span>
+                <span class="solutions__benefit">Reportes de uso</span>
+              </div>
+              <a href="#Contacto" class="btn btn--primary">Cotiza esta solución →</a>
+            </div>
+            <div class="solutions__panel-visual" aria-hidden="true">
+              <div class="solutions__panel-num">03</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 4: Experiencia Completa -->
+        <div class="solutions__panel" id="sol-panel-3"
+          role="tabpanel" aria-labelledby="sol-tab-3" data-color="green" hidden>
+          <div class="solutions__panel-bg" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1920&q=80')" aria-hidden="true"></div>
+          <div class="solutions__panel-overlay" aria-hidden="true"></div>
+          <div class="container solutions__panel-inner">
+            <div class="solutions__panel-text">
+              <span class="solutions__panel-label">04 / Experiencia Completa</span>
+              <h2 class="solutions__panel-title">Más que equipos:<br>acompañamiento total</h2>
+              <p class="solutions__panel-desc">
+                Nuestro enfoque integra consultoría, ingeniería audiovisual y servicios gestionados. Acompañamos a tu empresa en todo el ciclo de vida, desde el diseño hasta la operación continua.
+              </p>
+              <ul class="solutions__list" aria-label="Qué incluye">
+                <li>Consultoría + ingeniería + soporte unificado</li>
+                <li>Estándar homogéneo en todas tus sedes</li>
+                <li>Ciclo completo: diseño → operación → mejora</li>
+              </ul>
+              <div class="solutions__panel-benefits">
+                <span class="solutions__benefit">Un solo proveedor</span>
+                <span class="solutions__benefit">SLA garantizado</span>
+                <span class="solutions__benefit">ROI medible</span>
+              </div>
+              <a href="#Contacto" class="btn btn--primary">Cotiza esta solución →</a>
+            </div>
+            <div class="solutions__panel-visual" aria-hidden="true">
+              <div class="solutions__panel-num">04</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <!-- ══════════════════════════════════════════
