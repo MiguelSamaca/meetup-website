@@ -633,9 +633,150 @@
     <!-- ══════════════════════════════════════════
          SECCIÓN 7 — SOPORTE / PAQUETES
          ══════════════════════════════════════════ -->
-    <section class="support-plans section" aria-label="Paquetes de soporte">
-      <!-- 3 cards: Esencial | Profesional | Enterprise -->
-      <!-- Métricas: Uptime, Uso real, CSAT -->
+    <section class="support section" aria-label="Paquetes de soporte y servicios gestionados">
+      <div class="container">
+
+        <!-- Encabezado -->
+        <div class="support__header text-center">
+          <span class="section-label">Soporte continuo</span>
+          <h2 class="support__title">Operación garantizada para tus salas</h2>
+          <p class="support__subtitle">
+            Proveemos mantenimiento, monitoreo y analítica para maximizar la disponibilidad
+            de tus espacios en cualquier sector productivo.
+          </p>
+        </div>
+
+        <!-- 3 Cards de paquetes -->
+        <div class="support__plans" role="list">
+
+          <!-- Esencial -->
+          <article class="support__card" role="listitem">
+            <div class="support__card-header">
+              <div class="support__card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 class="support__card-name">Esencial</h3>
+              <p class="support__card-desc">Para equipos que necesitan una base sólida de mantenimiento.</p>
+            </div>
+            <hr class="support__card-divider" aria-hidden="true">
+            <ul class="support__card-features" aria-label="Qué incluye el plan Esencial">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Mantenimiento preventivo
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Mesa de ayuda 8×5
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Reporte mensual de estado
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Visitas programadas
+              </li>
+            </ul>
+            <a href="#Contacto" class="btn btn--outline support__card-cta">Solicitar información</a>
+          </article>
+
+          <!-- Profesional — destacado -->
+          <article class="support__card support__card--featured" role="listitem">
+            <div class="support__card-badge">Más popular</div>
+            <div class="support__card-header">
+              <div class="support__card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <h3 class="support__card-name">Profesional</h3>
+              <p class="support__card-desc">Monitoreo proactivo y soporte prioritario para organizaciones exigentes.</p>
+            </div>
+            <hr class="support__card-divider" aria-hidden="true">
+            <ul class="support__card-features" aria-label="Qué incluye el plan Profesional">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Todo lo del plan Esencial
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Monitoreo proactivo remoto
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Soporte prioritario
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Dashboard de analítica
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                CSAT y métricas de uso
+              </li>
+            </ul>
+            <a href="#Contacto" class="btn btn--primary support__card-cta">Solicitar información</a>
+          </article>
+
+          <!-- Enterprise -->
+          <article class="support__card" role="listitem">
+            <div class="support__card-header">
+              <div class="support__card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+              </div>
+              <h3 class="support__card-name">Enterprise</h3>
+              <p class="support__card-desc">Cobertura total con SLA personalizado para operaciones críticas.</p>
+            </div>
+            <hr class="support__card-divider" aria-hidden="true">
+            <ul class="support__card-features" aria-label="Qué incluye el plan Enterprise">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Todo lo del plan Profesional
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Cobertura 24×7
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Repuestos críticos en sitio
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                SLA personalizado
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Gerente de cuenta dedicado
+              </li>
+            </ul>
+            <a href="#Contacto" class="btn btn--outline support__card-cta">Solicitar información</a>
+          </article>
+
+        </div>
+
+        <!-- Métricas que medimos -->
+        <div class="support__metrics" aria-label="Métricas de operación">
+          <p class="support__metrics-label">Lo que medimos en cada sala</p>
+          <div class="support__metrics-grid">
+            <div class="support__metric">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <span>Uptime de salas</span>
+            </div>
+            <div class="support__metric">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>Uso real vs capacidad</span>
+            </div>
+            <div class="support__metric">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <span>Fallos recurrentes</span>
+            </div>
+            <div class="support__metric">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+              <span>CSAT del usuario</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <!-- ══════════════════════════════════════════

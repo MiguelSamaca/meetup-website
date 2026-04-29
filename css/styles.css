@@ -1739,6 +1739,233 @@ p {
 }
 
 /* ============================================================
+   SOPORTE / PAQUETES
+   ============================================================ */
+.support {
+  background: var(--bg-base);
+  border-top: 1px solid var(--border);
+}
+
+.support__header {
+  margin-bottom: var(--space-xl);
+}
+
+.support__title {
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.support__subtitle {
+  color: var(--text-secondary);
+  font-size: 16px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Grid de 3 cards */
+.support__plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  align-items: start;
+  margin-bottom: var(--space-xl);
+}
+
+/* Card base */
+.support__card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.support__card:hover {
+  border-color: rgba(14, 207, 130, 0.3);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  transform: translateY(-4px);
+}
+
+/* Card destacada */
+.support__card--featured {
+  border-color: var(--accent);
+  background: linear-gradient(160deg, rgba(14,207,130,0.06) 0%, var(--bg-card) 60%);
+  box-shadow: 0 0 40px rgba(14, 207, 130, 0.12);
+  transform: translateY(-8px);
+}
+
+.support__card--featured:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 16px 48px rgba(14, 207, 130, 0.2);
+}
+
+/* Badge "Más popular" */
+.support__card-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+/* Header de la card */
+.support__card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.support__card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.support__card--featured .support__card-icon {
+  background: var(--accent-light);
+  border-color: rgba(14, 207, 130, 0.3);
+}
+
+.support__card-name {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.support__card-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Divisor */
+.support__card-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.support__card--featured .support__card-divider {
+  border-color: rgba(14, 207, 130, 0.2);
+}
+
+/* Lista de features */
+.support__card-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.support__card-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.support__card-features li svg {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.support__card--featured .support__card-features li {
+  color: var(--text-primary);
+}
+
+/* CTA de card */
+.support__card-cta {
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.support__card .btn--outline {
+  border-color: var(--border);
+  color: var(--text-secondary);
+}
+
+.support__card .btn--outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: none;
+}
+
+/* Métricas */
+.support__metrics {
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-lg);
+  text-align: center;
+}
+
+.support__metrics-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.support__metrics-grid {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.support__metric {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.support__metric svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .support__plans { grid-template-columns: repeat(3, 1fr); gap: var(--space-sm); }
+}
+
+@media (max-width: 768px) {
+  .support__plans {
+    grid-template-columns: 1fr;
+  }
+  .support__card--featured {
+    transform: none;
+    order: -1;
+  }
+  .support__card--featured:hover { transform: translateY(-4px); }
+  .support__metrics-grid { gap: var(--space-md); }
+}
+
+/* ============================================================
    RESPONSIVE BREAKPOINTS GLOBALES
    ============================================================ */
 @media (max-width: 1024px) {
