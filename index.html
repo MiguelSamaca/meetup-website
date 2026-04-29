@@ -1278,10 +1278,145 @@
     <!-- ══════════════════════════════════════════
          SECCIÓN 14 — FORMULARIO DE CONTACTO
          ══════════════════════════════════════════ -->
-    <section class="contact section" id="Contacto" aria-label="Formulario de contacto">
-      <!-- Imagen de fondo sala de reuniones -->
-      <!-- Card flotante: "Diseñemos juntos tu sala de reuniones ideal" -->
-      <!-- Formulario: Email* | Teléfono | Empresa | Nombre | Apellidos | ENVIAR -->
+    <section class="contact" id="Contacto" aria-label="Formulario de contacto">
+
+      <!-- Fondo: imagen sala de reuniones + overlay -->
+      <div class="contact__bg" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80"
+          alt=""
+          class="contact__bg-img"
+          loading="lazy"
+          width="1920" height="1080"
+        />
+        <div class="contact__bg-overlay"></div>
+      </div>
+
+      <!-- Card flotante -->
+      <div class="container contact__inner">
+        <div class="contact__card" role="region" aria-labelledby="contact-heading">
+
+          <!-- Cabecera -->
+          <div class="contact__header">
+            <span class="contact__eyebrow">Hablemos de tu proyecto</span>
+            <h2 class="contact__title" id="contact-heading">
+              Diseñemos juntos tu sala<br>de reuniones ideal
+            </h2>
+            <p class="contact__subtitle">
+              Cuéntanos tu proyecto y recibe una asesoría gratuita<br>en menos de 24 horas. Sin costo ni compromiso.
+            </p>
+          </div>
+
+          <!-- Formulario Mailchimp -->
+          <form
+            class="contact__form"
+            action="https://meetupco.us1.list-manage.com/subscribe/post?u=XXXXXXXX&amp;id=XXXXXXXX"
+            method="post"
+            target="_blank"
+            novalidate
+            aria-label="Formulario de contacto MeetUp"
+          >
+            <div class="contact__form-grid">
+
+              <div class="contact__field">
+                <label for="contact-nombre" class="contact__label">
+                  Nombre <span class="contact__required" aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="contact-nombre"
+                  name="FNAME"
+                  type="text"
+                  class="contact__input"
+                  placeholder="Tu nombre"
+                  required
+                  autocomplete="given-name"
+                />
+              </div>
+
+              <div class="contact__field">
+                <label for="contact-apellidos" class="contact__label">Apellidos</label>
+                <input
+                  id="contact-apellidos"
+                  name="LNAME"
+                  type="text"
+                  class="contact__input"
+                  placeholder="Tus apellidos"
+                  autocomplete="family-name"
+                />
+              </div>
+
+              <div class="contact__field">
+                <label for="contact-empresa" class="contact__label">Empresa</label>
+                <input
+                  id="contact-empresa"
+                  name="COMPANY"
+                  type="text"
+                  class="contact__input"
+                  placeholder="Nombre de tu empresa"
+                  autocomplete="organization"
+                />
+              </div>
+
+              <div class="contact__field">
+                <label for="contact-tel" class="contact__label">Teléfono</label>
+                <input
+                  id="contact-tel"
+                  name="PHONE"
+                  type="tel"
+                  class="contact__input"
+                  placeholder="+57 300 000 0000"
+                  autocomplete="tel"
+                />
+              </div>
+
+              <div class="contact__field contact__field--full">
+                <label for="contact-email" class="contact__label">
+                  Correo electrónico <span class="contact__required" aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="contact-email"
+                  name="EMAIL"
+                  type="email"
+                  class="contact__input"
+                  placeholder="tu@empresa.com"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+
+            </div>
+
+            <!-- Honeypot anti-spam Mailchimp -->
+            <div style="position:absolute;left:-5000px" aria-hidden="true">
+              <input type="text" name="b_XXXXXXXX_XXXXXXXX" tabindex="-1" value="">
+            </div>
+
+            <button type="submit" class="btn btn--primary contact__submit">
+              Solicitar asesoría gratuita
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+
+          </form>
+
+          <!-- Trust signals -->
+          <ul class="contact__trust" role="list" aria-label="Garantías del servicio">
+            <li class="contact__trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Respuesta en menos de 24 h
+            </li>
+            <li class="contact__trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Sin compromiso de contrato
+            </li>
+            <li class="contact__trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Asesoría 100% gratuita
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
     </section>
 
   </main>
