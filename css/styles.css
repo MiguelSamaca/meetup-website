@@ -1,0 +1,365 @@
+/* ============================================================
+   MEETUP — DESIGN TOKENS & BASE STYLES
+   ============================================================ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap');
+
+/* ============================================================
+   TOKENS DE DISEÑO — CSS VARIABLES
+   ============================================================ */
+:root {
+  /* --- Fondos --- */
+  --bg-base:        #07090F;
+  --bg-card:        #0D1117;
+  --bg-surface:     #131929;
+  --bg-elevated:    #1A2235;
+  --bg-light:       #F4F7FF;
+  --bg-white:       #FFFFFF;
+
+  /* --- Color de acento principal (azul MeetUp) --- */
+  --accent:         #1E6FFF;
+  --accent-hover:   #1558D6;
+  --accent-light:   rgba(30, 111, 255, 0.12);
+
+  /* --- CTA / Acción (verde) --- */
+  --cta:            #0ECF82;
+  --cta-hover:      #0BB36F;
+  --cta-light:      rgba(14, 207, 130, 0.12);
+
+  /* --- Texto --- */
+  --text-primary:   #F0F4FF;
+  --text-secondary: #8896B3;
+  --text-muted:     #4A5775;
+  --text-dark:      #0D1117;
+  --text-link:      #1E6FFF;
+
+  /* --- Bordes --- */
+  --border:         #1E2840;
+  --border-light:   #E8EDF7;
+
+  /* --- Gradientes --- */
+  --grad-hero:      linear-gradient(135deg, #07090F 0%, #0D1A35 100%);
+  --grad-accent:    linear-gradient(135deg, #1E6FFF 0%, #0EA5E9 100%);
+  --grad-cta:       linear-gradient(135deg, #0ECF82 0%, #0EA5E9 100%);
+  --grad-warm:      linear-gradient(135deg, #FF6B35 0%, #F7C59F 100%);
+  --grad-devices:   linear-gradient(135deg, #0D1A35 0%, #1A0D35 100%);
+
+  /* --- Sombras --- */
+  --shadow-sm:      0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md:      0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-lg:      0 24px 64px rgba(0, 0, 0, 0.5);
+  --shadow-glow:    0 0 40px rgba(30, 111, 255, 0.2);
+
+  /* --- Bordes redondeados --- */
+  --radius-sm:      8px;
+  --radius-md:      16px;
+  --radius-lg:      24px;
+  --radius-xl:      32px;
+  --radius-pill:    999px;
+
+  /* --- Espaciado --- */
+  --space-xs:       8px;
+  --space-sm:       16px;
+  --space-md:       24px;
+  --space-lg:       48px;
+  --space-xl:       80px;
+  --space-2xl:      120px;
+
+  /* --- Tipografía --- */
+  --font-heading:   'Manrope', sans-serif;
+  --font-body:      'Inter', sans-serif;
+  --font-editorial: 'Playfair Display', serif;
+
+  /* --- Transiciones --- */
+  --transition:     0.25s ease;
+  --transition-slow: 0.45s ease;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ============================================================
+   TIPOGRAFÍA BASE
+   ============================================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+h1 { font-size: clamp(36px, 5.5vw, 64px); }
+h2 { font-size: clamp(28px, 4vw, 48px); }
+h3 { font-size: clamp(22px, 3vw, 32px); }
+h4 { font-size: clamp(18px, 2vw, 24px); }
+
+p {
+  color: var(--text-secondary);
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.75;
+}
+
+/* ============================================================
+   LAYOUT HELPERS
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+.container--wide {
+  max-width: 1400px;
+}
+
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.section--dark  { background: var(--bg-base); }
+.section--card  { background: var(--bg-card); }
+.section--light { background: var(--bg-light); color: var(--text-dark); }
+.section--white { background: var(--bg-white); color: var(--text-dark); }
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+
+/* ============================================================
+   BOTONES
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--cta);
+  color: #000;
+}
+.btn--primary:hover {
+  background: var(--cta-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(14, 207, 130, 0.35);
+}
+
+.btn--accent {
+  background: var(--accent);
+  color: #fff;
+}
+.btn--accent:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(30, 111, 255, 0.35);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border);
+}
+.btn--outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.btn--outline-white {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.4);
+}
+.btn--outline-white:hover {
+  border-color: #fff;
+  background: rgba(255,255,255,0.08);
+}
+
+.btn--store {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+}
+.btn--store:hover {
+  background: var(--accent-hover);
+}
+
+/* ============================================================
+   ETIQUETA / LABEL DE SECCIÓN
+   ============================================================ */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-sm);
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* ============================================================
+   DIVIDER
+   ============================================================ */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+/* ============================================================
+   CARDS BASE
+   ============================================================ */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ============================================================
+   SCROLLBAR PERSONALIZADO
+   ============================================================ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-card); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ============================================================
+   SKIP TO CONTENT (Accesibilidad)
+   ============================================================ */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 9999;
+  border-radius: 0 0 var(--radius-sm) 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+.skip-link:focus { top: 0; }
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .section { padding: var(--space-lg) 0; }
+}
+
+@media (max-width: 480px) {
+  .grid-4 { grid-template-columns: 1fr; }
+  h1 { font-size: 32px; }
+  h2 { font-size: 26px; }
+}
