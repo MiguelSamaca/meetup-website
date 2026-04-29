@@ -90,8 +90,111 @@
     <!-- ══════════════════════════════════════════
          SECCIÓN 2 — HERO (Slider 4 imágenes)
          ══════════════════════════════════════════ -->
-    <section class="hero" aria-label="Banner principal">
-      <!-- Slider full-screen | H1 | Subtítulo | CTA "Cotiza tu Sala Ideal" -->
+    <section class="hero" id="hero" aria-label="Banner principal">
+
+      <!-- Slides de fondo -->
+      <div class="hero__slides" aria-hidden="true">
+        <div class="hero__slide hero__slide--active" style="--slide-bg: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80')"></div>
+        <div class="hero__slide" style="--slide-bg: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1920&q=80')"></div>
+        <div class="hero__slide" style="--slide-bg: url('https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&w=1920&q=80')"></div>
+        <div class="hero__slide" style="--slide-bg: url('https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=1920&q=80')"></div>
+      </div>
+
+      <!-- Overlay gradiente -->
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <!-- Contenido -->
+      <div class="container hero__content">
+
+        <div class="hero__text">
+          <span class="section-label">Salas Inteligentes · Colombia</span>
+
+          <h1 class="hero__title">
+            Soluciones de<br>
+            videoconferencia y<br>
+            espacios de <em class="hero__highlight">alto impacto</em>
+          </h1>
+
+          <p class="hero__subtitle">
+            En MeetUp transformamos tus espacios corporativos en entornos de colaboración avanzada.
+            Hardware profesional, software certificado y servicios gestionados para reuniones
+            claras, híbridas y eficientes.
+          </p>
+
+          <div class="hero__ctas">
+            <a href="#Contacto" class="btn btn--primary hero__cta-main">
+              Cotiza tu Sala Ideal
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#soluciones" class="btn btn--outline-white">
+              Ver Soluciones
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="hero__stats" aria-label="Métricas clave">
+            <div class="hero__stat">
+              <strong class="hero__stat-num">40+</strong>
+              <span class="hero__stat-label">Salas instaladas</span>
+            </div>
+            <div class="hero__stat-divider" aria-hidden="true"></div>
+            <div class="hero__stat">
+              <strong class="hero__stat-num">95%</strong>
+              <span class="hero__stat-label">Tasa de adopción</span>
+            </div>
+            <div class="hero__stat-divider" aria-hidden="true"></div>
+            <div class="hero__stat">
+              <strong class="hero__stat-num">30%</strong>
+              <span class="hero__stat-label">Menos soporte TI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Badge plataformas -->
+        <div class="hero__platforms" aria-label="Plataformas compatibles">
+          <p class="hero__platforms-label">Certificado para</p>
+          <div class="hero__platforms-logos">
+            <span class="hero__platform-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+              Teams Rooms
+            </span>
+            <span class="hero__platform-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+              Zoom Rooms
+            </span>
+            <span class="hero__platform-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 18h-2V6h2m-4 0H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
+              Google Meet
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Flechas del slider -->
+      <button class="hero__nav-btn hero__nav-prev" id="heroPrev" aria-label="Slide anterior">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="hero__nav-btn hero__nav-next" id="heroNext" aria-label="Slide siguiente">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
+      <!-- Dots -->
+      <div class="hero__dots" role="tablist" aria-label="Indicadores de slide">
+        <button class="hero__dot hero__dot--active" role="tab" aria-selected="true"  aria-label="Slide 1" data-index="0"></button>
+        <button class="hero__dot"                  role="tab" aria-selected="false" aria-label="Slide 2" data-index="1"></button>
+        <button class="hero__dot"                  role="tab" aria-selected="false" aria-label="Slide 3" data-index="2"></button>
+        <button class="hero__dot"                  role="tab" aria-selected="false" aria-label="Slide 4" data-index="3"></button>
+      </div>
+
+      <!-- Indicador de scroll -->
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <div class="hero__scroll-mouse">
+          <div class="hero__scroll-wheel"></div>
+        </div>
+        <span>Scroll</span>
+      </div>
+
     </section>
 
     <!-- ══════════════════════════════════════════

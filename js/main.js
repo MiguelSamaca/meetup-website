@@ -1,6 +1,74 @@
 // MeetUp — main.js
 
 /* ──────────────────────────────────────────
+   HERO SLIDER
+   ────────────────────────────────────────── */
+(function initHeroSlider() {
+  const slides   = document.querySelectorAll('.hero__slide');
+  const dots     = document.querySelectorAll('.hero__dot');
+  const prevBtn  = document.getElementById('heroPrev');
+  const nextBtn  = document.getElementById('heroNext');
+  const hero     = document.getElementById('hero');
+
+  if (!slides.length) return;
+
+  let current   = 0;
+  let timer     = null;
+  const DELAY   = 5000;
+
+  function goTo(index) {
+    slides[current].classList.remove('hero__slide--active');
+    dots[current].classList.remove('hero__dot--active');
+    dots[current].setAttribute('aria-selected', 'false');
+
+    current = (index + slides.length) % slides.length;
+
+    slides[current].classList.add('hero__slide--active');
+    dots[current].classList.add('hero__dot--active');
+    dots[current].setAttribute('aria-selected', 'true');
+  }
+
+  function start() {
+    timer = setInterval(() => goTo(current + 1), DELAY);
+  }
+
+  function stop() {
+    clearInterval(timer);
+  }
+
+  function restart() {
+    stop();
+    start();
+  }
+
+  // Flechas
+  prevBtn?.addEventListener('click', () => { goTo(current - 1); restart(); });
+  nextBtn?.addEventListener('click', () => { goTo(current + 1); restart(); });
+
+  // Dots
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => { goTo(i); restart(); });
+  });
+
+  // Pausa al hover
+  hero?.addEventListener('mouseenter', stop);
+  hero?.addEventListener('mouseleave', start);
+
+  // Swipe en mobile
+  let touchStartX = 0;
+  hero?.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  hero?.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      goTo(diff > 0 ? current + 1 : current - 1);
+      restart();
+    }
+  }, { passive: true });
+
+  start();
+})();
+
+/* ──────────────────────────────────────────
    NAVBAR: scroll effect + hamburger menu
    ────────────────────────────────────────── */
 (function initNavbar() {
