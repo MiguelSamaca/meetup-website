@@ -90,6 +90,7 @@
   --contact-input-bg:        #F8F9FC;
   --tab-hover-bg:            rgba(0, 0, 0, 0.04);
   --quote-watermark-color:   rgba(0, 0, 0, 0.05);
+  --panel-overlay:           linear-gradient(90deg, rgba(255,255,255,0.70) 0%, rgba(255,255,255,0.30) 60%, transparent 100%);
 }
 
 /* ============================================================
@@ -125,6 +126,7 @@ html[data-theme="dark"] {
   --contact-input-bg:        rgba(255, 255, 255, 0.05);
   --tab-hover-bg:            rgba(255, 255, 255, 0.03);
   --quote-watermark-color:   rgba(255, 255, 255, 0.025);
+  --panel-overlay:           linear-gradient(90deg, rgba(7,9,15,0.97) 0%, rgba(7,9,15,0.70) 60%, rgba(7,9,15,0.30) 100%);
 }
 
 /* ============================================================
@@ -1129,6 +1131,7 @@ p {
   line-height: 1.2;
   margin-bottom: var(--space-md);
   letter-spacing: -0.5px;
+  color: #F0F4FF;
 }
 
 .value-prop__title-accent {
@@ -1139,10 +1142,11 @@ p {
   margin-bottom: var(--space-lg);
   font-size: 16px;
   line-height: 1.8;
+  color: rgba(240, 244, 255, 0.75);
 }
 
 .value-prop__desc strong {
-  color: var(--text-primary);
+  color: #F0F4FF;
   font-weight: 600;
 }
 
@@ -1341,7 +1345,7 @@ p {
 .solutions__panel-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(7,9,15,0.97) 0%, rgba(7,9,15,0.7) 60%, rgba(7,9,15,0.3) 100%);
+  background: var(--panel-overlay);
 }
 
 .solutions__panel-inner {
@@ -2807,6 +2811,11 @@ p {
 
 .resources__card--main .resources__card-title {
   font-size: clamp(20px, 2.5vw, 26px);
+  color: #F0F4FF;
+}
+
+.resources__card--main .resources__card-desc {
+  color: rgba(240, 244, 255, 0.75);
 }
 
 .resources__card-desc {
