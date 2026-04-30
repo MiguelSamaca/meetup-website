@@ -92,6 +92,8 @@
   --quote-watermark-color:   rgba(0, 0, 0, 0.05);
   --panel-overlay:           linear-gradient(90deg, rgba(255,255,255,0.70) 0%, rgba(255,255,255,0.30) 60%, transparent 100%);
   --panel-overlay-mobile:    rgba(255, 255, 255, 0.88);
+  --badge-bg:                rgba(255, 255, 255, 0.92);
+  --badge-border:            rgba(0, 0, 0, 0.08);
 }
 
 /* ============================================================
@@ -129,6 +131,8 @@ html[data-theme="dark"] {
   --quote-watermark-color:   rgba(255, 255, 255, 0.025);
   --panel-overlay:           linear-gradient(90deg, rgba(7,9,15,0.97) 0%, rgba(7,9,15,0.70) 60%, rgba(7,9,15,0.30) 100%);
   --panel-overlay-mobile:    rgba(7, 9, 15, 0.93);
+  --badge-bg:                rgba(7, 9, 15, 0.75);
+  --badge-border:            rgba(255, 255, 255, 0.10);
 }
 
 /* ============================================================
@@ -1652,9 +1656,9 @@ p {
   bottom: 24px;
   left: 24px;
   z-index: 2;
-  background: rgba(7, 9, 15, 0.75);
+  background: var(--badge-bg);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid var(--badge-border);
   border-radius: var(--radius-md);
   padding: 12px 18px;
   display: flex;
