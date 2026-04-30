@@ -242,3 +242,20 @@
 
   document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
 })();
+
+/* ──────────────────────────────────────────
+   THEME TOGGLE
+   ────────────────────────────────────────── */
+(function initThemeToggle() {
+  const btn  = document.getElementById('themeToggle');
+  const html = document.documentElement;
+
+  const saved = localStorage.getItem('meetup-theme') || 'light';
+  html.setAttribute('data-theme', saved);
+
+  btn?.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('meetup-theme', next);
+  });
+})();
