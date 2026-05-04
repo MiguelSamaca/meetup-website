@@ -259,3 +259,26 @@
     localStorage.setItem('meetup-theme', next);
   });
 })();
+
+
+/* ──────────────────────────────────────────
+   SCROLL-TO-TOP FAB
+   ────────────────────────────────────────── */
+(function initFabTop() {
+  const btn = document.getElementById('fabTop');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      btn.removeAttribute('hidden');
+      btn.classList.add('fab--visible');
+    } else {
+      btn.classList.remove('fab--visible');
+      btn.addEventListener('transitionend', () => btn.setAttribute('hidden', ''), { once: true });
+    }
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
