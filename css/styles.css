@@ -3308,7 +3308,7 @@ html[data-theme="dark"] .theme-toggle__label-light { display: none; }
 .fab-group {
   position: fixed;
   right: 1.25rem;
-  bottom: 1.5rem;
+  bottom: 5.5rem;
   z-index: 900;
   display: flex;
   flex-direction: column;
