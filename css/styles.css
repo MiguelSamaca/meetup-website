@@ -91,7 +91,7 @@
   --tab-hover-bg:            rgba(0, 0, 0, 0.04);
   --quote-watermark-color:   rgba(0, 0, 0, 0.05);
   --panel-overlay:           linear-gradient(90deg, rgba(255,255,255,0.70) 0%, rgba(255,255,255,0.30) 60%, transparent 100%);
-  --panel-overlay-mobile:    rgba(255, 255, 255, 0.88);
+  --panel-overlay-mobile:    rgba(255, 255, 255, 0.60);
   --badge-bg:                rgba(255, 255, 255, 0.92);
   --badge-border:            rgba(0, 0, 0, 0.08);
 }
@@ -130,7 +130,7 @@ html[data-theme="dark"] {
   --tab-hover-bg:            rgba(255, 255, 255, 0.03);
   --quote-watermark-color:   rgba(255, 255, 255, 0.025);
   --panel-overlay:           linear-gradient(90deg, rgba(7,9,15,0.97) 0%, rgba(7,9,15,0.70) 60%, rgba(7,9,15,0.30) 100%);
-  --panel-overlay-mobile:    rgba(7, 9, 15, 0.93);
+  --panel-overlay-mobile:    rgba(7, 9, 15, 0.70);
   --badge-bg:                rgba(7, 9, 15, 0.75);
   --badge-border:            rgba(255, 255, 255, 0.10);
 }
@@ -1496,6 +1496,10 @@ p {
 
   .solutions__panel-overlay {
     background: var(--panel-overlay-mobile);
+  }
+
+  .solutions__panel-bg {
+    opacity: 0.45;
   }
 }
 
@@ -3359,7 +3363,7 @@ html[data-theme="dark"] .theme-toggle__label-light { display: none; }
 }
 
 @media (max-width: 480px) {
-  .fab-group { right: 0.75rem; bottom: 1rem; }
+  .fab-group { right: 0.75rem; bottom: 5.5rem; }
   .fab { width: 46px; height: 46px; }
   .fab svg { width: 22px; height: 22px; }
 }
