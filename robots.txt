@@ -1,0 +1,12 @@
+# robots.txt — MeetUp Colombia
+# https://meetupco.com/
+
+# Permitir todos los bots de búsqueda
+User-agent: *
+Allow: /
+
+# Sitemap principal
+Sitemap: https://meetupco.com/sitemap.xml
+
+# Host canónico (instrucción para Yandex y otros motores)
+Host: meetupco.com

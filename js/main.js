@@ -16,6 +16,14 @@
   let timer     = null;
   const DELAY   = 5000;
 
+  // Carga diferida: asigna --slide-bg solo cuando el slide va a mostrarse
+  function loadSlide(slide) {
+    const bg = slide.dataset.slideBg;
+    if (bg && !slide.style.getPropertyValue('--slide-bg')) {
+      slide.style.setProperty('--slide-bg', `url('${bg}')`);
+    }
+  }
+
   function goTo(index) {
     slides[current].classList.remove('hero__slide--active');
     dots[current].classList.remove('hero__dot--active');
@@ -23,6 +31,7 @@
 
     current = (index + slides.length) % slides.length;
 
+    loadSlide(slides[current]); // carga la imagen justo antes de mostrarla
     slides[current].classList.add('hero__slide--active');
     dots[current].classList.add('hero__dot--active');
     dots[current].setAttribute('aria-selected', 'true');
@@ -241,6 +250,38 @@
   );
 
   document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+})();
+
+/* ──────────────────────────────────────────
+   FAQ ACCORDION
+   ────────────────────────────────────────── */
+(function initFaq() {
+  const items = document.querySelectorAll('.faq__item');
+  if (!items.length) return;
+
+  items.forEach(item => {
+    const btn    = item.querySelector('.faq__question');
+    const answer = item.querySelector('.faq__answer');
+    if (!btn || !answer) return;
+
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      // Cerrar todos los demás
+      items.forEach(other => {
+        const otherBtn    = other.querySelector('.faq__question');
+        const otherAnswer = other.querySelector('.faq__answer');
+        if (otherBtn && otherAnswer && other !== item) {
+          otherBtn.setAttribute('aria-expanded', 'false');
+          otherAnswer.hidden = true;
+        }
+      });
+
+      // Toggle el actual
+      btn.setAttribute('aria-expanded', !isOpen);
+      answer.hidden = isOpen;
+    });
+  });
 })();
 
 /* ──────────────────────────────────────────

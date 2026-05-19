@@ -3,15 +3,337 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MeetUp — Transformamos tus espacios corporativos en entornos de colaboración avanzada. Salas inteligentes con Teams Rooms, Zoom Rooms y Google Meet." />
-  <meta property="og:title" content="MeetUp — Salas Inteligentes" />
-  <meta property="og:description" content="Conectando Ideas, Creando Experiencias. Soluciones de videoconferencia para espacios de alto impacto." />
+  <meta name="description" content="Diseñamos e instalamos salas de videoconferencia con Teams Rooms, Zoom Rooms y Google Meet en Colombia. +40 salas instaladas. ¡Agenda tu asesoría gratis!" />
+  <meta name="keywords" content="salas inteligentes Colombia, videoconferencia empresarial Colombia, Teams Rooms Colombia, Zoom Rooms Colombia, Google Meet salas, instalación sala videoconferencia, sala huddle room, integrador AV Colombia, salas de reuniones híbridas, audiovisual corporativo Colombia, sala de conferencias Bogotá" />
+  <!-- Open Graph — previsualización en redes sociales y mensajería -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://meetupco.com/" />
-  <title>MeetUp — Salas Inteligentes | Conectando Ideas, Creando Experiencias</title>
+  <meta property="og:site_name" content="MeetUp Salas Inteligentes" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:title" content="MeetUp | Salas Inteligentes para Videoconferencia en Colombia" />
+  <meta property="og:description" content="Diseñamos e instalamos salas de videoconferencia con Teams Rooms, Zoom Rooms y Google Meet en Colombia. +40 salas instaladas. ¡Agenda tu asesoría gratis!" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&h=630&q=80" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Sala de videoconferencia inteligente — MeetUp Colombia" />
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@meetupco" />
+  <meta name="twitter:title" content="MeetUp | Salas Inteligentes para Videoconferencia en Colombia" />
+  <meta name="twitter:description" content="Diseñamos e instalamos salas de videoconferencia con Teams Rooms, Zoom Rooms y Google Meet en Colombia. +40 salas instaladas." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&h=630&q=80" />
+  <meta name="twitter:image:alt" content="Sala de videoconferencia inteligente — MeetUp Colombia" />
+  <title>MeetUp | Salas Inteligentes para Videoconferencia en Colombia</title>
+  <!-- Canonical: evita contenido duplicado entre Vercel y dominio principal -->
+  <link rel="canonical" href="https://meetupco.com/" />
+  <!-- Geolocalización: señales para motores de búsqueda — Colombia -->
+  <meta name="geo.region" content="CO" />
+  <meta name="geo.placename" content="Colombia" />
+  <meta name="geo.position" content="4.710989;-74.072092" />
+  <meta name="ICBM" content="4.710989, -74.072092" />
+  <meta name="language" content="es-CO" />
+  <!-- Fuentes: preconnect + preload para carga no bloqueante -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap"
+    media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" />
+  </noscript>
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- ═══════════════════════════════════════
+       SCHEMA.ORG — DATOS ESTRUCTURADOS
+       Para Google Knowledge Panel + GEO (ChatGPT, Perplexity, Gemini)
+       ═══════════════════════════════════════ -->
+
+  <!-- 3.5 WebSite — Sitelinks Searchbox y entidad web -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://meetupco.com/#website",
+    "url": "https://meetupco.com/",
+    "name": "MeetUp Salas Inteligentes Colombia",
+    "description": "Diseño, instalación y soporte de salas inteligentes de videoconferencia con Teams Rooms, Zoom Rooms y Google Meet en Colombia.",
+    "publisher": { "@id": "https://meetupco.com/#organization" },
+    "inLanguage": "es-CO",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://meetupco.com/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- 3.4 FAQPage — Alto impacto para GEO (ChatGPT, Perplexity, Gemini) y Rich Snippets Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué es una sala inteligente de videoconferencia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Una sala inteligente de videoconferencia es un espacio equipado con hardware profesional (cámaras, micrófonos, pantallas, procesadores de audio) y software certificado (Teams Rooms, Zoom Rooms o Google Meet) que permite realizar reuniones híbridas y remotas con calidad de audio y video superiores. MeetUp diseña e instala estas salas en Colombia para empresas de todos los tamaños."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta instalar una sala de videoconferencia en Colombia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El costo de una sala de videoconferencia en Colombia varía según el tamaño y equipamiento. Una sala Huddle (2-6 personas) parte desde 11 millones COP, una sala mediana (6-12 personas) entre 18 y 25 millones COP, y una sala grande o auditorio desde 35 millones COP. MeetUp ofrece asesoría gratuita para diseñar la solución más adecuada a tu presupuesto. Contáctanos al +57 314 4358107."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuál es la diferencia entre Teams Rooms y Zoom Rooms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Teams Rooms es la solución de Microsoft para salas de reuniones, ideal para organizaciones que usan Microsoft 365 y Teams como plataforma principal. Zoom Rooms es la solución de Zoom, perfecta para empresas que ya usan Zoom como herramienta de videollamadas. Ambas ofrecen experiencias nativas certificadas. MeetUp instala y certifica ambas plataformas en Colombia y te asesora sobre cuál es la mejor opción según tu ecosistema tecnológico."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿MeetUp instala salas de videoconferencia en todo Colombia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. MeetUp tiene cobertura en las principales ciudades de Colombia: Bogotá, Medellín, Cali, Barranquilla y otras ciudades intermedias. Contamos con más de 40 salas instaladas en empresas del sector corporativo, educativo, gobierno y salud en todo el país."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué incluye el servicio de instalación de una sala de videoconferencia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El servicio de MeetUp incluye: (1) Consultoría y análisis del espacio, (2) Diseño técnico personalizado, (3) Suministro de hardware certificado (cámaras, micrófonos, pantallas, procesadores DSP), (4) Instalación y cableado profesional, (5) Configuración y certificación de la plataforma (Teams Rooms, Zoom Rooms o Google Meet), (6) Capacitación al equipo de trabajo, y (7) Soporte continuo post-instalación."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tiempo tarda la instalación de una sala de videoconferencia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El tiempo de instalación depende del tamaño y complejidad de la sala. Una sala Huddle o mediana puede instalarse en 1 a 2 días hábiles. Una sala grande o auditorio puede tomar entre 3 y 5 días. El proceso incluye diseño previo, instalación física, configuración de plataformas y pruebas de calidad. MeetUp coordina todo el proyecto para minimizar la interrupción de tus operaciones."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué tipos de salas de videoconferencia existen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Existen cuatro tipos principales según el tamaño: (1) Sala Huddle: para 2 a 6 personas, ideal para reuniones pequeñas e informales. (2) Sala Mediana: para 6 a 12 personas, estándar para la mayoría de empresas. (3) Sala Grande: para 12 a 20 personas, para reuniones de directivos o capacitaciones. (4) Auditorio: para más de 20 personas, ideal para presentaciones y eventos corporativos. MeetUp tiene soluciones certificadas para cada tipo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿MeetUp ofrece soporte técnico después de la instalación?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. MeetUp ofrece tres planes de soporte continuo: Plan Esencial (soporte básico), Plan Profesional (monitoreo remoto y mantenimiento preventivo) y Plan Enterprise (SLA garantizado, gestor de cuenta dedicado y respuesta prioritaria). El objetivo es garantizar la máxima disponibilidad de las salas y reducir hasta un 30% la carga sobre el equipo de TI interno."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- 3.3 Services -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Servicios MeetUp Colombia",
+    "description": "Servicios de diseño, instalación y soporte de salas inteligentes para videoconferencia en Colombia",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Service",
+          "@id": "https://meetupco.com/#servicio-diseno",
+          "name": "Diseño e Implementación de Salas Inteligentes",
+          "description": "Análisis del espacio, diseño técnico personalizado e instalación profesional de salas de videoconferencia con hardware certificado para Teams Rooms, Zoom Rooms y Google Meet en Colombia.",
+          "provider": { "@id": "https://meetupco.com/#organization" },
+          "areaServed": { "@type": "Country", "name": "Colombia" },
+          "serviceType": "Instalación de salas de videoconferencia",
+          "category": "Audiovisual y Videoconferencia"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Service",
+          "@id": "https://meetupco.com/#servicio-integracion",
+          "name": "Integración de Plataformas de Videoconferencia",
+          "description": "Integración certificada con Microsoft Teams Rooms, Zoom Rooms y Google Meet. Configuración, certificación y pruebas de calidad para garantizar reuniones híbridas sin fricción.",
+          "provider": { "@id": "https://meetupco.com/#organization" },
+          "areaServed": { "@type": "Country", "name": "Colombia" },
+          "serviceType": "Integración de plataformas AV",
+          "category": "Audiovisual y Videoconferencia"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Service",
+          "@id": "https://meetupco.com/#servicio-automatizacion",
+          "name": "Automatización de Espacios Corporativos",
+          "description": "Automatización inteligente de salas: control de iluminación, climatización, reserva de salas y gestión centralizada de dispositivos AV para optimizar la experiencia de reunión.",
+          "provider": { "@id": "https://meetupco.com/#organization" },
+          "areaServed": { "@type": "Country", "name": "Colombia" },
+          "serviceType": "Automatización de espacios",
+          "category": "Smart Building y AV"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Service",
+          "@id": "https://meetupco.com/#servicio-soporte",
+          "name": "Soporte Continuo y Servicios Gestionados para Salas",
+          "description": "Monitoreo remoto, mantenimiento preventivo, mesa de ayuda especializada y actualizaciones de firmware. Planes Esencial, Profesional y Enterprise para garantizar disponibilidad máxima de las salas.",
+          "provider": { "@id": "https://meetupco.com/#organization" },
+          "areaServed": { "@type": "Country", "name": "Colombia" },
+          "serviceType": "Managed Services AV",
+          "category": "Soporte técnico especializado",
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Plan Esencial",
+              "description": "Soporte básico para salas de videoconferencia"
+            },
+            {
+              "@type": "Offer",
+              "name": "Plan Profesional",
+              "description": "Soporte avanzado con monitoreo y mantenimiento preventivo"
+            },
+            {
+              "@type": "Offer",
+              "name": "Plan Enterprise",
+              "description": "Soporte total con SLA garantizado y gestor de cuenta dedicado"
+            }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- 3.2 LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://meetupco.com/#localbusiness",
+    "name": "MeetUp Salas Inteligentes",
+    "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&h=630&q=80",
+    "url": "https://meetupco.com/",
+    "telephone": "+57-314-4358107",
+    "email": "info@meetupco.com",
+    "priceRange": "$$",
+    "currenciesAccepted": "COP",
+    "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bogotá",
+      "addressRegion": "Cundinamarca",
+      "addressCountry": "CO"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 4.710989,
+      "longitude": -74.072092
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ],
+    "hasMap": "https://maps.google.com/?q=Bogot%C3%A1,+Colombia",
+    "areaServed": [
+      { "@type": "City", "name": "Bogotá" },
+      { "@type": "City", "name": "Medellín" },
+      { "@type": "City", "name": "Cali" },
+      { "@type": "City", "name": "Barranquilla" },
+      { "@type": "Country", "name": "Colombia" }
+    ],
+    "knowsAbout": [
+      "Salas de videoconferencia",
+      "Teams Rooms",
+      "Zoom Rooms",
+      "Google Meet",
+      "Ingeniería audiovisual",
+      "Automatización de espacios",
+      "Salas inteligentes"
+    ],
+    "parentOrganization": {
+      "@id": "https://meetupco.com/#organization"
+    }
+  }
+  </script>
+
+  <!-- 3.1 Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://meetupco.com/#organization",
+    "name": "MeetUp Salas Inteligentes",
+    "alternateName": "MeetUp Colombia",
+    "url": "https://meetupco.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://meetupco.com/assets/images/logo-meetup.png",
+      "width": 200,
+      "height": 60
+    },
+    "description": "MeetUp diseña, instala y gestiona salas inteligentes de videoconferencia con Teams Rooms, Zoom Rooms y Google Meet para empresas en Colombia. Consultoría integral, ingeniería audiovisual y soporte continuo.",
+    "foundingDate": "2020",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Colombia"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+57-314-4358107",
+        "contactType": "sales",
+        "email": "info@meetupco.com",
+        "areaServed": "CO",
+        "availableLanguage": "Spanish"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+57-314-4358107",
+        "contactType": "customer support",
+        "areaServed": "CO",
+        "availableLanguage": "Spanish"
+      }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/meetupco",
+      "https://www.instagram.com/meetupco",
+      "https://www.youtube.com/@meetupco",
+      "https://wa.me/573144358107"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -65,6 +387,7 @@
           <li><a href="#beneficios" class="navbar__link">Beneficios</a></li>
           <li><a href="#proceso"    class="navbar__link">Proceso</a></li>
           <li><a href="#recursos"   class="navbar__link">Recursos</a></li>
+          <li><a href="#faq"        class="navbar__link">FAQ</a></li>
           <li><a href="#Contacto"   class="navbar__link">Contacto</a></li>
         </ul>
       </nav>
@@ -94,12 +417,12 @@
          ══════════════════════════════════════════ -->
     <section class="hero" id="hero" aria-label="Banner principal">
 
-      <!-- Slides de fondo -->
+      <!-- Slides de fondo: slide 1 carga inmediato (LCP), slides 2-4 diferidos via JS -->
       <div class="hero__slides" aria-hidden="true">
         <div class="hero__slide hero__slide--active" style="--slide-bg: url('/images/hero-slide-1.jpg')"></div>
-        <div class="hero__slide" style="--slide-bg: url('/images/hero-slide-2.jpg')"></div>
-        <div class="hero__slide" style="--slide-bg: url('/images/hero-slide-3.jpg')"></div>
-        <div class="hero__slide" style="--slide-bg: url('/images/hero-slide-4.jpg')"></div>
+        <div class="hero__slide" data-slide-bg="/images/hero-slide-2.jpg"></div>
+        <div class="hero__slide" data-slide-bg="/images/hero-slide-3.jpg"></div>
+        <div class="hero__slide" data-slide-bg="/images/hero-slide-4.jpg"></div>
       </div>
 
       <!-- Overlay gradiente -->
@@ -112,13 +435,13 @@
           <span class="section-label">Salas Inteligentes · Colombia</span>
 
           <h1 class="hero__title">
-            Soluciones de<br>
-            videoconferencia y<br>
-            espacios de <em class="hero__highlight">alto impacto</em>
+            Salas inteligentes<br>
+            en Colombia para<br>
+            videoconferencia de <em class="hero__highlight">alto impacto</em>
           </h1>
 
           <p class="hero__subtitle">
-            En MeetUp transformamos tus espacios corporativos en entornos de colaboración avanzada.
+            En MeetUp transformamos espacios corporativos en Colombia en entornos de colaboración avanzada.
             Hardware profesional, software certificado y servicios gestionados para reuniones
             claras, híbridas y eficientes.
           </p>
@@ -219,8 +542,9 @@
             <span class="value-prop__title-accent">no solo instalamos equipos</span>
           </h2>
           <p class="value-prop__desc">
-            Diseñamos salas para reuniones inteligentes, intuitivas, escalables y confiables.
-            Nuestro enfoque combina <strong>consultoría</strong>, <strong>ingeniería audiovisual</strong>,
+            Somos el equipo de integración AV de referencia en Colombia. Diseñamos salas para reuniones
+            inteligentes, intuitivas, escalables y confiables. Nuestro enfoque combina
+            <strong>consultoría</strong>, <strong>ingeniería audiovisual</strong>,
             <strong>automatización del espacio</strong> y soporte continuo para una experiencia
             uniforme en toda tu organización.
           </p>
@@ -524,16 +848,20 @@
           <div class="room-config__img-wrap">
             <img id="room-img-huddle"    class="room-config__img room-config__img--active"
               src="images/room-huddle.jpg"
-              alt="Sala Huddle pequeña para 2 a 6 personas" loading="lazy">
+              alt="Sala Huddle pequeña para 2 a 6 personas — MeetUp Colombia"
+              width="900" height="506" loading="lazy" decoding="async">
             <img id="room-img-mediana"   class="room-config__img"
               src="images/room-mediana.jpg"
-              alt="Sala mediana para 6 a 12 personas" loading="lazy">
+              alt="Sala mediana para 6 a 12 personas — MeetUp Colombia"
+              width="900" height="506" loading="lazy" decoding="async">
             <img id="room-img-grande"    class="room-config__img"
               src="images/room-grande.jpg"
-              alt="Sala grande o sala de juntas para 12 a 20 personas" loading="lazy">
+              alt="Sala grande o sala de juntas para 12 a 20 personas — MeetUp Colombia"
+              width="900" height="506" loading="lazy" decoding="async">
             <img id="room-img-auditorio" class="room-config__img"
               src="images/room-auditorio.jpg"
-              alt="Auditorio y espacios de alto impacto" loading="lazy">
+              alt="Auditorio y espacios de alto impacto — MeetUp Colombia"
+              width="900" height="506" loading="lazy" decoding="async">
           </div>
 
           <div class="room-config__visual-badge" id="roomBadge">
@@ -951,20 +1279,20 @@
       <div class="container">
 
         <div class="success__header text-center">
-          <span class="section-label">Casos de éxito</span>
-          <h2 class="success__title">Empresas que ya transformaron sus espacios</h2>
-          <p class="success__subtitle">Descubre cómo hemos cambiado la experiencia de colaboración en organizaciones líderes.</p>
+          <span class="section-label">Casos de éxito en Colombia</span>
+          <h2 class="success__title">Organizaciones colombianas que ya transformaron sus espacios</h2>
+          <p class="success__subtitle">Más de 40 salas instaladas en empresas líderes del sector corporativo, educativo, gobierno y salud en Colombia.</p>
         </div>
 
         <div class="success__grid">
 
           <!-- Card principal: Multinacional financiera -->
-          <article class="success__card success__card--main" aria-label="Caso de éxito: Multinacional financiera">
+          <article class="success__card success__card--main" aria-label="Caso de éxito: Multinacional financiera en Colombia">
             <div class="success__card-bg" style="background-image: url('images/success-financiero.jpg')" aria-hidden="true"></div>
             <div class="success__card-overlay" aria-hidden="true"></div>
             <div class="success__card-content">
-              <span class="success__card-tag">Sector Financiero</span>
-              <h3 class="success__card-title">Multinacional financiera<br>estandariza 25 salas</h3>
+              <span class="success__card-tag">Sector Financiero · Bogotá, Colombia</span>
+              <h3 class="success__card-title">Multinacional financiera<br>estandariza 25 salas Teams Rooms</h3>
               <div class="success__stats">
                 <div class="success__stat">
                   <strong>−40%</strong>
@@ -980,19 +1308,19 @@
                 </div>
               </div>
               <blockquote class="success__quote">
-                <p>"La estandarización de salas permitió una experiencia uniforme en todas las oficinas, mejorando significativamente la productividad de las reuniones."</p>
+                <p>"MeetUp estandarizó 25 salas Teams Rooms en nuestras oficinas de Bogotá en menos de 60 días. La experiencia uniforme transformó la productividad de todas nuestras reuniones."</p>
               </blockquote>
               <a href="#Contacto" class="btn btn--primary success__cta">Quiero resultados similares →</a>
             </div>
           </article>
 
           <!-- Card secundaria: Universidad privada -->
-          <article class="success__card success__card--secondary" aria-label="Caso de éxito: Universidad privada">
+          <article class="success__card success__card--secondary" aria-label="Caso de éxito: Universidad privada en Colombia">
             <div class="success__card-bg" style="background-image: url('images/success-universidad.jpg')" aria-hidden="true"></div>
             <div class="success__card-overlay" aria-hidden="true"></div>
             <div class="success__card-content">
-              <span class="success__card-tag">Educación</span>
-              <h3 class="success__card-title">Universidad privada:<br>auditorio híbrido para 500</h3>
+              <span class="success__card-tag">Educación · Medellín, Colombia</span>
+              <h3 class="success__card-title">Universidad privada:<br>auditorio híbrido Zoom Rooms para 500</h3>
               <div class="success__stats">
                 <div class="success__stat">
                   <strong>10K+</strong>
@@ -1004,9 +1332,9 @@
                 </div>
               </div>
               <blockquote class="success__quote">
-                <p>"La solución híbrida permitió expandir el alcance de eventos académicos sin depender de proveedores externos, generando ahorros significativos."</p>
+                <p>"MeetUp implementó Zoom Rooms en nuestro auditorio principal en Medellín. Hoy llegamos a más de 10.000 estudiantes sin depender de proveedores externos."</p>
               </blockquote>
-              <a href="#Contacto" class="btn btn--outline-white success__cta">Ver más detalles →</a>
+              <a href="#Contacto" class="btn btn--outline-white success__cta">Quiero resultados similares →</a>
             </div>
           </article>
 
@@ -1256,6 +1584,114 @@
 
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN FAQ — PREGUNTAS FRECUENTES
+         (Sincronizada con Schema FAQPage del <head>)
+         ══════════════════════════════════════════ -->
+    <section class="faq section" id="faq" aria-label="Preguntas frecuentes sobre salas de videoconferencia en Colombia" data-reveal>
+      <div class="container">
+
+        <div class="faq__header text-center">
+          <span class="section-label">Preguntas frecuentes</span>
+          <h2 class="faq__title">Todo lo que necesitas saber sobre salas inteligentes en Colombia</h2>
+          <p class="faq__subtitle">Resolvemos las dudas más comunes antes de tu asesoría gratuita.</p>
+        </div>
+
+        <div class="faq__list" role="list">
+
+          <div class="faq__item" role="listitem">
+            <button class="faq__question" aria-expanded="false">
+              <span>¿Qué es una sala inteligente de videoconferencia?</span>
+              <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer" hidden>
+              <p>Una sala inteligente de videoconferencia es un espacio equipado con hardware profesional (cámaras, micrófonos, pantallas, procesadores de audio) y software certificado (Teams Rooms, Zoom Rooms o Google Meet) que permite realizar reuniones híbridas y remotas con calidad de audio y video superiores. MeetUp diseña e instala estas salas en Colombia para empresas de todos los tamaños.</p>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button class="faq__question" aria-expanded="false">
+              <span>¿Cuánto cuesta instalar una sala de videoconferencia en Colombia?</span>
+              <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer" hidden>
+              <p>El costo varía según el tamaño y equipamiento. Una sala Huddle (2–6 personas) parte desde 11 millones COP, una sala mediana (6–12 personas) entre 18 y 25 millones COP, y una sala grande o auditorio desde 35 millones COP. MeetUp ofrece asesoría gratuita para diseñar la solución más adecuada a tu presupuesto. Contáctanos al <a href="tel:+573144358107">+57 314 4358107</a>.</p>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button class="faq__question" aria-expanded="false">
+              <span>¿Cuál es la diferencia entre Teams Rooms y Zoom Rooms?</span>
+              <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer" hidden>
+              <p>Teams Rooms es la solución de Microsoft, ideal para organizaciones que usan Microsoft 365. Zoom Rooms es la solución de Zoom, perfecta si ya usan Zoom como herramienta principal. Ambas ofrecen experiencias nativas certificadas. MeetUp instala y certifica ambas plataformas en Colombia y te asesora sobre cuál es mejor según tu ecosistema tecnológico.</p>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button class="faq__question" aria-expanded="false">
+              <span>¿MeetUp instala salas de videoconferencia en todo Colombia?</span>
+              <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer" hidden>
+              <p>Sí. MeetUp tiene cobertura en las principales ciudades de Colombia: Bogotá, Medellín, Cali, Barranquilla y otras ciudades intermedias. Contamos con más de 40 salas instaladas en empresas del sector corporativo, educativo, gobierno y salud en todo el país.</p>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button class="faq__question" aria-expanded="false">
+              <span>¿Qué incluye el servicio de instalación de una sala de videoconferencia?</span>
+              <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer" hidden>
+              <p>El servicio incluye: consultoría y análisis del espacio, diseño técnico personalizado, suministro de hardware certificado (cámaras, micrófonos, pantallas, procesadores DSP), instalación y cableado profesional, configuración y certificación de la plataforma, capacitación al equipo, y soporte continuo post-instalación.</p>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button class="faq__question" aria-expanded="false">
+              <span>¿Cuánto tiempo tarda la instalación de una sala de videoconferencia?</span>
+              <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer" hidden>
+              <p>Una sala Huddle o mediana se instala en 1 a 2 días hábiles. Una sala grande o auditorio toma entre 3 y 5 días. El proceso incluye diseño previo, instalación física, configuración de plataformas y pruebas de calidad. MeetUp coordina todo el proyecto para minimizar la interrupción de tus operaciones.</p>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button class="faq__question" aria-expanded="false">
+              <span>¿Qué tipos de salas de videoconferencia existen?</span>
+              <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer" hidden>
+              <p>Existen cuatro tipos según el tamaño: <strong>Sala Huddle</strong> (2–6 personas), <strong>Sala Mediana</strong> (6–12 personas), <strong>Sala Grande</strong> (12–20 personas) y <strong>Auditorio</strong> (más de 20 personas). MeetUp tiene soluciones certificadas para cada tipo con diferentes niveles de equipamiento y presupuesto.</p>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button class="faq__question" aria-expanded="false">
+              <span>¿MeetUp ofrece soporte técnico después de la instalación?</span>
+              <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer" hidden>
+              <p>Sí. Ofrecemos tres planes de soporte continuo: <strong>Plan Esencial</strong>, <strong>Plan Profesional</strong> (monitoreo remoto y mantenimiento preventivo) y <strong>Plan Enterprise</strong> (SLA garantizado y gestor de cuenta dedicado). Nuestro objetivo es reducir hasta un 30% la carga sobre el equipo de TI interno.</p>
+            </div>
+          </div>
+
+        </div><!-- /.faq__list -->
+
+        <div class="faq__cta text-center">
+          <p>¿Tu pregunta no está aquí?</p>
+          <a href="#Contacto" class="btn btn--primary">
+            Habla con un especialista
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
       </div>
     </section>
 
@@ -1532,6 +1968,6 @@
     </button>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
