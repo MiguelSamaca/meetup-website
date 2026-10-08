@@ -3,6 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Ads: etiqueta global + conversiones por clic en WhatsApp, llamada y correo -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18481637876"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18481637876');
+
+    (function () {
+      var CONVERSIONES = [
+        { patron: /^https?:\/\/(wa\.me|wa\.link|api\.whatsapp\.com)\//i, sendTo: 'AW-18481637876/S5LOCMLh8ZUdEPTT3exE' },
+        { patron: /^tel:/i,    sendTo: 'AW-18481637876/Dm7oCMXh8ZUdEPTT3exE' },
+        { patron: /^mailto:/i, sendTo: 'AW-18481637876/vF5UCJHG85UdEPTT3exE' }
+      ];
+      document.addEventListener('click', function (e) {
+        var enlace = e.target.closest && e.target.closest('a[href]');
+        if (!enlace) return;
+        var href = enlace.getAttribute('href');
+        for (var i = 0; i < CONVERSIONES.length; i++) {
+          if (CONVERSIONES[i].patron.test(href)) {
+            gtag('event', 'conversion', { send_to: CONVERSIONES[i].sendTo });
+            return;
+          }
+        }
+      }, true);
+    })();
+  </script>
   <meta name="description" content="Diseñamos e instalamos salas de videoconferencia con Teams Rooms, Zoom Rooms y Google Meet en Colombia. +40 salas instaladas. ¡Agenda tu asesoría gratis!" />
   <meta name="keywords" content="salas inteligentes Colombia, videoconferencia empresarial Colombia, Teams Rooms Colombia, Zoom Rooms Colombia, Google Meet salas, instalación sala videoconferencia, sala huddle room, integrador AV Colombia, salas de reuniones híbridas, audiovisual corporativo Colombia, sala de conferencias Bogotá" />
   <!-- Open Graph — previsualización en redes sociales y mensajería -->
@@ -1932,10 +1959,6 @@
       <div class="footer__bottom">
         <p class="footer__copy">
           &copy; 2026 MeetUp — Todos los derechos reservados.
-        </p>
-        <p class="footer__powered">
-          Diseño y desarrollo por
-          <a href="https://crearpaginaweb.co" target="_blank" rel="noopener" class="footer__powered-link">CrearPaginaWeb.co</a>
         </p>
       </div>
 
