@@ -1,9 +1,13 @@
 // Recibe el formulario de cotización de meetupco.com y crea/actualiza el contacto como cliente en Shopify.
-// El aviso por correo lo envía Shopify Flow (disparador: etiqueta "Formulario web").
-// Variables de entorno en Vercel: SHOPIFY_STORE_DOMAIN, SHOPIFY_ADMIN_TOKEN, SHOPIFY_API_VERSION (opcional).
+// El aviso interno (a emaldonado@meetupco.com) lo envía Shopify Flow (disparador: etiqueta "Formulario web").
+// La confirmación "recibimos tu solicitud" a la persona la envía Resend, solo si existe RESEND_API_KEY.
+// Variables de entorno en Vercel: SHOPIFY_STORE_DOMAIN, SHOPIFY_ADMIN_TOKEN, SHOPIFY_API_VERSION (opcional), RESEND_API_KEY.
 
 const API_VERSION = process.env.SHOPIFY_API_VERSION || '2025-10';
 const ETIQUETA_BASE = 'Formulario web';
+const REMITENTE = 'MeetUp <emaldonado@meetupco.com>';
+const RESPONDER_A = 'emaldonado@meetupco.com';
+const WHATSAPP = 'https://wa.me/573144358107';
 
 function limpiar(v, max = 500) {
   return String(v || '').replace(/[\u0000-\u001f]/g, ' ').trim().slice(0, max);
@@ -15,6 +19,51 @@ function telefonoE164(tel) {
   if (/^3\d{9}$/.test(d)) return '+57' + d;      // celular colombiano sin indicativo
   if (/^57\d{10}$/.test(d)) return '+' + d;
   return null;
+}
+
+function escaparHtml(v) {
+  return String(v).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+// Confirmación a la persona. Si falla, no afecta el registro del contacto.
+async function enviarConfirmacion({ email, nombre, interes }) {
+  if (!process.env.RESEND_API_KEY) return;
+  const n = escaparHtml(nombre);
+  const tema = interes ? ` sobre <b>${escaparHtml(interes)}</b>` : '';
+  const html = `
+  <div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:0 auto;color:#242835;line-height:1.55">
+    <div style="padding:20px 0;border-bottom:3px solid #00A886"><b style="font-size:20px">MeetUp</b>
+      <span style="color:#6b7280;font-size:13px"> · Salas inteligentes</span></div>
+    <h2 style="color:#00A886;margin:24px 0 8px">¡Gracias por escribirnos, ${n}!</h2>
+    <p>Recibimos tu solicitud${tema}. Un asesor de MeetUp te contactará en menos de 24 horas hábiles.</p>
+    <p>Si es urgente, escríbenos por WhatsApp:</p>
+    <p><a href="${WHATSAPP}" style="display:inline-block;background:#00A886;color:#fff;text-decoration:none;padding:10px 18px;border-radius:8px;font-weight:bold">Escribir por WhatsApp</a></p>
+    <p>Mientras tanto, puedes conocer nuestras soluciones en <a href="https://tienda.meetupco.com" style="color:#00A886">tienda.meetupco.com</a>.</p>
+    <p style="margin-top:28px">— Equipo MeetUp</p>
+    <p style="color:#9ca3af;font-size:12px;border-top:1px solid #e5e7eb;padding-top:12px">MEETUP S.A.S. · Carrera 11 # 90-07, Bogotá, Colombia.
+      Recibes este correo porque enviaste una solicitud en meetupco.com.</p>
+  </div>`;
+  const texto = `¡Gracias por escribirnos, ${nombre}!
+
+Recibimos tu solicitud${interes ? ' sobre ' + interes : ''}. ` +
+    `Un asesor de MeetUp te contactará en menos de 24 horas hábiles.
+
+Si es urgente: ${WHATSAPP}
+
+— Equipo MeetUp`;
+  try {
+    const r = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from: REMITENTE, to: [email], reply_to: RESPONDER_A,
+        subject: 'Recibimos tu solicitud — MeetUp', html, text: texto
+      })
+    });
+    if (!r.ok) console.error('resend error', r.status, await r.text());
+  } catch (e) {
+    console.error('resend error', e.message);
+  }
 }
 
 async function shopify(query, variables) {
@@ -124,6 +173,8 @@ module.exports = async (req, res) => {
         } } }
       );
     }
+
+    await enviarConfirmacion({ email, nombre, interes });
 
     return res.status(200).json({ ok: true });
   } catch (e) {
