@@ -1800,7 +1800,7 @@
                   type="text"
                   class="contact__input"
                   placeholder="Nombre de tu empresa"
-                  autocomplete="organization"
+                  autocomplete="off"
                 />
               </div>
 
@@ -1811,8 +1811,12 @@
                   name="telefono"
                   type="tel"
                   class="contact__input"
-                  placeholder="+57 300 000 0000"
-                  autocomplete="tel"
+                  placeholder="300 000 0000"
+                  autocomplete="tel-national"
+                  inputmode="numeric"
+                  maxlength="10"
+                  pattern="3[0-9]{9}"
+                  title="Celular de 10 dígitos que empiece por 3"
                 />
               </div>
 
@@ -1861,7 +1865,7 @@
             </button>
 
             <label class="contact__consent" style="display:flex;gap:8px;align-items:flex-start;margin-top:12px;font-size:.78rem;line-height:1.4;cursor:pointer;opacity:.85">
-              <input type="checkbox" name="acepta_marketing" value="si" style="margin-top:2px;flex:none">
+              <input type="checkbox" name="acepta_marketing" value="si" checked style="margin-top:2px;flex:none">
               <span>Acepto recibir información comercial de MeetUp (novedades, lanzamientos y promociones).</span>
             </label>
 
@@ -1884,6 +1888,13 @@
                 });
               } catch (err) {}
               function leer(k) { try { return sessionStorage.getItem('mu_' + k) || ''; } catch (err) { return ''; } }
+
+              var tel = form.elements['telefono'];
+              tel.addEventListener('input', function () {
+                var d = tel.value.replace(/\D/g, '');
+                if (d.length > 10 && d.indexOf('57') === 0) d = d.slice(2);
+                tel.value = d.slice(0, 10);
+              });
 
               form.addEventListener('submit', function (e) {
                 e.preventDefault();
