@@ -81,6 +81,23 @@ async function shopify(query, variables) {
   return j.data;
 }
 
+// Verifica el token de reCAPTCHA v3 con Google. Score < 0.5 = probable bot.
+async function verificarRecaptcha(token) {
+  if (!token || !process.env.RECAPTCHA_SECRET) return true; // sin clave configurada: dejar pasar
+  try {
+    const r = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `secret=${encodeURIComponent(process.env.RECAPTCHA_SECRET)}&response=${encodeURIComponent(token)}`
+    });
+    const j = await r.json();
+    return j.success && j.score >= 0.5;
+  } catch (e) {
+    console.error('recaptcha error', e.message);
+    return true; // si falla la verificación, dejar pasar para no bloquear usuarios reales
+  }
+}
+
 // Detecta strings de alta entropía / caracteres aleatorios típicos de bots
 // (sin vocales, sin espacios en nombres de > 10 chars, ratio consonantes muy alto)
 function pareceBot(v) {
@@ -112,7 +129,11 @@ module.exports = async (req, res) => {
     return res.status(400).json({ ok: false, error: 'datos' });
   }
 
-  // 3. Detección de contenido aleatorio en campos clave
+  // 3. reCAPTCHA v3: score < 0.5 → bot
+  const recaptchaOk = await verificarRecaptcha(b._recaptcha);
+  if (!recaptchaOk) return res.status(200).json({ ok: true, lead: false });
+
+  // 4. Detección de contenido aleatorio en campos clave
   if (pareceBot(nombre) || pareceBot(b.empresa) || pareceBot(b.mensaje)) {
     return res.status(200).json({ ok: true, lead: false });
   }

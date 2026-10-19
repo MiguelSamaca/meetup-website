@@ -1900,6 +1900,8 @@
                 tel.value = d.slice(0, 10);
               });
 
+              var RECAPTCHA_SITE_KEY = 'TU_SITE_KEY_AQUI';
+
               form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 if (!form.checkValidity()) {
@@ -1907,13 +1909,22 @@
                   form.reportValidity();
                   return;
                 }
-                var datos = new URLSearchParams(new FormData(form));
-                datos.append('gclid', leer('gclid'));
-                datos.append('utm_campaign', leer('utm_campaign'));
-                datos.append('pagina', location.href);
                 boton.disabled = true;
                 status.textContent = 'Enviando…';
-                fetch(ENDPOINT, { method: 'POST', body: datos })
+
+                // Obtiene el token de reCAPTCHA v3 antes de enviar
+                var ejecutar = window.grecaptcha
+                  ? grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'contacto' })
+                  : Promise.resolve('');
+
+                ejecutar.then(function (token) {
+                  var datos = new URLSearchParams(new FormData(form));
+                  datos.append('gclid', leer('gclid'));
+                  datos.append('utm_campaign', leer('utm_campaign'));
+                  datos.append('pagina', location.href);
+                  datos.append('_recaptcha', token);
+                  return fetch(ENDPOINT, { method: 'POST', body: datos });
+                })
                   .then(function (r) {
                     if (!r.ok) throw new Error('envio');
                     return r.json();
@@ -2082,5 +2093,7 @@
   </div>
 
   <script src="js/main.js" defer></script>
+  <!-- reCAPTCHA v3 — invisible para usuarios -->
+  <script src="https://www.google.com/recaptcha/api.js?render=TU_SITE_KEY_AQUI" async defer></script>
 </body>
 </html>
