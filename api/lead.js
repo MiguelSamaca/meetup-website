@@ -81,16 +81,40 @@ async function shopify(query, variables) {
   return j.data;
 }
 
+// Detecta strings de alta entropía / caracteres aleatorios típicos de bots
+// (sin vocales, sin espacios en nombres de > 10 chars, ratio consonantes muy alto)
+function pareceBot(v) {
+  if (!v || v.length < 6) return false;
+  const s = String(v);
+  const vocales = (s.match(/[aeiouáéíóuü]/gi) || []).length;
+  // Menos del 10 % de vocales en strings largos → probable bot
+  if (s.length > 10 && vocales / s.length < 0.10) return true;
+  // Más de 20 chars sin ningún espacio en campo nombre → probable bot
+  if (s.length > 20 && !/\s/.test(s)) return true;
+  return false;
+}
+
 module.exports = async (req, res) => {
   if (req.method !== 'POST') return res.status(405).json({ ok: false });
 
   const b = req.body || {};
-  if (b._honey) return res.status(200).json({ ok: true }); // bot
+
+  // 1. Honeypot: si el campo oculto tiene valor, es un bot
+  if (b._honey) return res.status(200).json({ ok: true, lead: false });
+
+  // 2. Verificación de tiempo: envíos en menos de 4 segundos son automáticos
+  const ts = parseInt(b._ts || '0', 10);
+  if (ts && Date.now() - ts < 4000) return res.status(200).json({ ok: true, lead: false });
 
   const email = limpiar(b.email, 200).toLowerCase();
   const nombre = limpiar(b.nombre, 80);
   if (!nombre || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).json({ ok: false, error: 'datos' });
+  }
+
+  // 3. Detección de contenido aleatorio en campos clave
+  if (pareceBot(nombre) || pareceBot(b.empresa) || pareceBot(b.mensaje)) {
+    return res.status(200).json({ ok: true, lead: false });
   }
 
   const apellidos = limpiar(b.apellidos, 80);
@@ -176,7 +200,7 @@ module.exports = async (req, res) => {
 
     await enviarConfirmacion({ email, nombre, interes });
 
-    return res.status(200).json({ ok: true });
+    return res.status(200).json({ ok: true, lead: true });
   } catch (e) {
     console.error('lead error', e.message);
     return res.status(500).json({ ok: false });
