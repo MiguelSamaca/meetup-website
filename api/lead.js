@@ -7,7 +7,7 @@ const API_VERSION = process.env.SHOPIFY_API_VERSION || '2025-10';
 const ETIQUETA_BASE = 'Formulario web';
 const REMITENTE = 'MeetUp <emaldonado@meetupco.com>';
 const RESPONDER_A = 'emaldonado@meetupco.com';
-const WHATSAPP = 'https://wa.me/573144358107';
+const WHATSAPP = 'https://wa.me/573117741688';
 
 function limpiar(v, max = 500) {
   return String(v || '').replace(/[\u0000-\u001f]/g, ' ').trim().slice(0, max);
