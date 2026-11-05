@@ -34,7 +34,7 @@
     function muConRef(a) {
       if (!MU_REF) return;
       var partes = a.href.split('?text=');
-      var texto = partes[1] ? decodeURIComponent(partes[1].split('&')[0]) : 'Hola MeetUp, quiero información.';
+      var texto = partes[1] ? decodeURIComponent(partes[1].split('&')[0].replace(/\+/g, ' ')) : 'Hola MeetUp, quiero información.';
       if (texto.indexOf('[ref:') !== -1) return;
       a.href = partes[0].split('?')[0] + '?text=' + encodeURIComponent(texto + '\n[ref: ' + MU_REF + ']');
     }
